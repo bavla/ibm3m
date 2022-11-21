@@ -58,3 +58,59 @@ reorderlinks <- function(MN,per=NULL){
 # str(Mo)
 # head(Mo$links)
 
+joinways <- function(MN,way1,way2,way3,sep="÷"){
+  info <- MN$info; Nw <- names(MN$ways)
+  Nu <- MN$nodes[[way1]]$ID; Nv <- MN$nodes[[way2]]$ID
+  i <- which(Nw==way1); j <- which(Nw==way2)
+  U <- Nu[MN$links[[i]]]; V <- Nv[MN$links[[j]]]
+  UV <- paste(U,V,sep=sep); UP <- factor(UV)
+  event <- list(op="joinways",ways=c(way1,way2,way3),sep=sep,date=date())
+  info$trace[[length(info$trace)+1]] <- event
+  lab <- paste(MN$ways[[way1]],MN$ways[[way2]],sep=" and ")
+  ways <- MN$ways[-c(i,j)]; ways[[way3]] <- lab 
+  nodes <- MN$nodes[-c(i,j)]; nodes[[way3]] <- data.frame(ID=levels(UP))
+  nw <- length(MN$ways); nc <- ncol(MN$links)
+  links <- MN$links[1:nw][-c(i,j)]; links[way3] <- as.integer(UP)
+  links <- cbind(links,MN$links[(nw+1):nc])
+  return(list(format="MWnets",info=info,ways=ways,nodes=nodes,links=links)) 
+}
+
+# Mj <- joinways(MN,"prog","univ","prun")
+
+projection <- function(MN,way,w){
+  Nw <- names(MN$ways); u <- which(Nw==way)
+  nw <- length(MN$ways); nc <- ncol(MN$links)
+  Nc <- names(MN$links); v <- which(Nc==w)
+  S <- c((1:nw)[-u],u,v)
+  MT <- MN$links[S]; Nt <- names(MT)[1:nw]
+  ex <- paste("order(",paste(Nt,collapse=","),")",sep="")
+  per <- with(MT,eval(str2expression(ex)))
+  MP <- with(MT,MT[per,])
+  I <- c(1); nm <- nw-1; nS <- length(MN$nodes[[way]]$ID)
+  for(i in 2:nrow(MP)) if(!all(MP[i-1,1:nm]==MP[i,1:nm])) I <- c(I,i)
+  I <- c(I,nrow(MP)+1)
+  Co <- matrix(0,nrow=nS,ncol=nS)
+  colnames(Co) <- rownames(Co) <- MN$nodes[[way]]$ID
+  for(i in 1:(length(I)-1)){
+    i1 <- I[i]; i2 <- I[i+1]-1
+    for(j in i1:i2) {
+      u <- MP[[way]][j]
+      for(k in j:i2){
+        v <- MP[[way]][k]
+        Co[u,v] <- Co[u,v] + MP[[w]][j] * MP[[w]][k]
+      }    
+    }
+  }
+  D <- diag(Co); diag(Co) <- 0; Co <- Co + t(Co); diag(Co) <- D
+  return(Co)
+}
+
+# Co <- projection(MN,"prov","w")
+# Co[1:10,1:15]
+
+salton <- function(Co){
+  Sal <- Co; diag(Sal) <- 1; n = nrow(Sal)
+  for(u in 1:(n-1)) for(v in (u+1):n) Sal[v,u] <- Sal[u,v] <- Co[u,v]/sqrt(Co[u,u]*Co[v,v])
+  return(Sal)
+}
+
