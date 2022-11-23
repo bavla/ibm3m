@@ -6,7 +6,7 @@
   - https://raw.githubusercontent.com/bavla/ibm3m/master/multiway/MWnets.R
 
 ```
-source(https://raw.githubusercontent.com/bavla/ibm3m/master/multiway/MWnets.R)
+source("https://raw.githubusercontent.com/bavla/ibm3m/master/multiway/MWnets.R")
 ```
 
 ### reorderways(MN,ord)
