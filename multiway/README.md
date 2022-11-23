@@ -2,7 +2,8 @@
 
 ## MWnets
 
-https://raw.githubusercontent.com/bavla/ibm3m/master/multiway/MWnets.R
+  - http://vladowiki.fmf.uni-lj.si/doku.php?id=vlado:work:2m:mwn:ops
+  - https://raw.githubusercontent.com/bavla/ibm3m/master/multiway/MWnets.R
 
 ```
 source(https://raw.githubusercontent.com/bavla/ibm3m/master/multiway/MWnets.R)
