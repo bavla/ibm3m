@@ -1,13 +1,13 @@
 # Analysis of multiway networks
 
-## reorderways(MN,ord)
+### reorderways(MN,ord)
 
 Reorder ways of the multiway network `MN` in the order determined in the vector `ord`. 
 ```
 MNo <- reorderways(MN,c("year","prog","prov","univ")) 
 ```
 
-## slice(MN,P)
+### slice(MN,P)
 
 Extract from the multiway network `MN` a subnetwork of links satisfying a predicate `P` on links columns.
 ```
