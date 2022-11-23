@@ -2,6 +2,12 @@
 
 ## MWnets
 
+https://raw.githubusercontent.com/bavla/ibm3m/master/multiway/MWnets.R
+
+```
+source(https://raw.githubusercontent.com/bavla/ibm3m/master/multiway/MWnets.R)
+```
+
 ### reorderways(MN,ord)
 
 Reorder ways of the multiway network `MN` in the order determined in the vector `ord`. 
