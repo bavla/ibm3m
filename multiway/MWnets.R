@@ -1,3 +1,8 @@
+# MWnets 0.0
+# by Vladimir Batagelj, November 2022
+# https://github.com/bavla/ibm3m/tree/master/multiway
+# source("https://raw.githubusercontent.com/bavla/ibm3m/master/multiway/MWnets.R")
+
 reorderways <- function(MN,ord){
   Cols <- colnames(MN$links); info <- MN$info
   if(!is.numeric(ord)) ord <- match(ord,Cols)
@@ -153,3 +158,6 @@ recodeway2part <- function(MN,way1,part,way2,desc){
 }
 
 # Mr <- recodeway2part(MN,"prov","IDreg","regs","region")
+# Mre <- flatten(Mr,"w",c("regs","univ","prog","year"))
+
+
