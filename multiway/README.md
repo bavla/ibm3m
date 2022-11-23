@@ -23,6 +23,8 @@ MS <- slice(MN,"year==3")
 ```
 
 ### flatten(MN,col,by,FUN="sum")
+
+Removes ways that are not listed in the vector `by` and applies   `FUN` on the weights   `col` for so obtained duplicates.
 ```
 MNf <- flatten(MN,"w",c("year","prov","univ"))
 Mf <- flatten(MN,"w",c("prov","univ"))
@@ -31,11 +33,10 @@ head(Mf$links)
 
 ### reorderlinks(MN,per=NULL)
 
-per = NULL - random
-
-per = permutation vector
-
-per = expression
+Reorders the links (rows) by the given permutation  `per`.
+  - `per = NULL` - random
+  - `per =` permutation vector
+  - `per =` expression
 ```
 n <- nrow(MN$links); per <- sample(1:n,n)
 Mor <- reorderlinks(MN)
@@ -68,6 +69,10 @@ plot(t,hang=-1,cex=0.8,main="Provinces / Ward")
 ### recodecol2bins(MN,col1,col2,bins=c(0,1e-323,Inf))
 
 Recodes the given link weight `col1` into bins determined by vector `bins` and stores the resulting weights in `col2`.
+
+bins = (b1,b2, …, bk)
+
+code(w) = i iff w in [ bi, b<i+1> )
 
 ```
 Mc <- recodecol2bins(MN,"w","code",bins=c(1,5,10,20,Inf))
