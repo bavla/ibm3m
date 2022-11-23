@@ -6,3 +6,4 @@ November 23 2022
     - Additional data [about nodes](http://vladowiki.fmf.uni-lj.si/doku.php?id=vlado:work:2m:mwn:test#extending_the_data_set_with_data_about_provinces) and [other](http://vladowiki.fmf.uni-lj.si/doku.php?id=vlado:work:2m:mwn:ops#abbreviations_for_regions)
     - [Tracing](http://vladowiki.fmf.uni-lj.si/doku.php?id=vlado:work:2m:mwn:ops)
   - MWnets - [functions](http://vladowiki.fmf.uni-lj.si/doku.php?id=vlado:work:2m:mwn:ops) 
+  - [Examples of analysis](http://vladowiki.fmf.uni-lj.si/doku.php?id=vlado:work:2m:mwn:genova:ana1)
