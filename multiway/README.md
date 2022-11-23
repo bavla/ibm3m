@@ -1,31 +1,17 @@
 # Analysis of multiway networks
 
-```
-reorderways <- function(MN,ord){
-  Cols <- colnames(MN$links); info <- MN$info
-  if(!is.numeric(ord)) ord <- match(ord,Cols)
-  nc <- length(Cols); nl <- length(ord)
-  MNr <- MN$links[c(ord,(nl+1):nc)]
-  event <- list(op="reorderways",par=Cols[ord],date=date())
-  info$trace[[length(info$trace)+1]] <- event
-  return(list(format="MWnets",info=info,ways=MN$ways[ord],
-    nodes=MN$nodes[ord],links=MNr,data=MN$data))
-}
+## reorderways(MN,ord)
 
-# MNo <- reorderways(MN,c("year","prog","prov","univ")) 
+Reorder ways of the multiway network `MN` in the order determined in the vector `ord`. 
+```
+MNo <- reorderways(MN,c("year","prog","prov","univ")) 
 ```
 
-```
-slice <- function(MN,P){
-  info <- MN$info
-  MNr <- with(MN$links,MN$links[eval(str2expression(P)),])
-  event <- list(op="slice",P=P,date=date())
-  info$trace[[length(info$trace)+1]] <- event
-  return(list(format="MWnets",info=info,ways=MN$ways,
-    nodes=MN$nodes,links=MNr,data=MN$data))
-}
+## slice(MN,P)
 
-# MS <- slice(MN,"year==3")
+Extract from the multiway network `MN` a subnetwork of links satisfying a predicate `P` on links columns.
+```
+MS <- slice(MN,"year==3")
 ```
 
 ```
