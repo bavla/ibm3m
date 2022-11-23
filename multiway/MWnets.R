@@ -6,7 +6,7 @@ reorderways <- function(MN,ord){
   event <- list(op="reorderways",par=Cols[ord],date=date())
   info$trace[[length(info$trace)+1]] <- event
   return(list(format="MWnets",info=info,ways=MN$ways[ord],
-    nodes=MN$nodes[ord],links=MNr))
+    nodes=MN$nodes[ord],links=MNr,data=MN$data))
 }
 
 # MNo <- reorderways(MN,c("year","prog","prov","univ")) 
@@ -17,7 +17,7 @@ slice <- function(MN,P){
   event <- list(op="slice",P=P,date=date())
   info$trace[[length(info$trace)+1]] <- event
   return(list(format="MWnets",info=info,ways=MN$ways,
-    nodes=MN$nodes,links=MNr))
+    nodes=MN$nodes,links=MNr,data=MN$data))
 }
 
 # MS <- slice(MN,"year==3")
@@ -33,7 +33,7 @@ flatten <- function(MN,col,by,FUN="sum"){
   info <- MN$info
   info$trace[[length(info$trace)+1]] <- event
   return(list(format="MWnets",info=info,ways=MN$ways[by],
-    nodes=MN$nodes[by],links=MNr))
+    nodes=MN$nodes[by],links=MNr,data=MN$data))
 }
 
 # MNf <- flatten(MN,5,c(4,1,2))
@@ -48,7 +48,7 @@ reorderlinks <- function(MN,per=NULL){
   event <- list(op="reorderlinks",per=P,date=date())
   info$trace[[length(info$trace)+1]] <- event
   return(list(format="MWnets",info=info,ways=MN$ways,
-    nodes=MN$nodes,links=MNr)) 
+    nodes=MN$nodes,links=MNr,data=MN$data)) 
 }
 
 # n <- nrow(MN$links); per <- sample(1:n,n)
@@ -72,7 +72,8 @@ joinways <- function(MN,way1,way2,way3,sep="÷"){
   nw <- length(MN$ways); nc <- ncol(MN$links)
   links <- MN$links[1:nw][-c(i,j)]; links[way3] <- as.integer(UP)
   links <- cbind(links,MN$links[(nw+1):nc])
-  return(list(format="MWnets",info=info,ways=ways,nodes=nodes,links=links)) 
+  return(list(format="MWnets",info=info,ways=ways,nodes=nodes,
+    links=links,data=MN$data)) 
 }
 
 # Mj <- joinways(MN,"prog","univ","prun")
@@ -114,3 +115,41 @@ salton <- function(Co){
   return(Sal)
 }
 
+recodecol2bins <- function(MN,col1,col2,bins=c(0,1e-323,Inf)){
+  info <- MN$info; MNr <- MN$links
+  w <- MNr[[col1]]; w1 <- rep(0,length(w))
+  for(i in 1:length(w)){
+    j <- 0
+    while(w[i]>=bins[j+1]) j <- j+1 
+    w1[i] <- j
+  }
+  MNr[[col2]] <- as.integer(w1)
+  event <- list(op="recodecol2bins",cols=c(col1,col2),bins=bins,date=date())
+  info$trace[[length(info$trace)+1]] <- event
+  return(list(format="MWnets",info=info,ways=MN$ways,nodes=MN$nodes,
+    links=MNr,data=MN$data)) 
+}
+
+# Mc <- recodecol2bins(MN,"w","code",bins=c(1,5,10,20,Inf))
+
+recodeway2part <- function(MN,way1,part,way2,desc){
+  info <- MN$info; Mt <- MN$links; W <- Mt[[way1]]
+  R <- MN$nodes$prov[[part]]; r <- factor(R)
+  C <- r[W]; Mt[[way1]] <- as.integer(C)
+  N <- names(Mt); N[which(N==way1)] <- way2; names(Mt) <- N
+  Mw <- MN$ways; Mw[[way1]] <- desc
+  N <- names(Mw); N[which(N==way1)] <- way2; names(Mw) <- N
+  Mn <- MN$nodes; Md <- MN$data
+  if(way2 %in% names(Md)){
+    Mn[[way1]] <- Md[[way2]]
+    Md <- Md[-which(names(Md)==way2)] 
+  } else {
+    Mn[[way1]] <- data.frame(ID=levels(r))
+  }
+  N <- names(Mn); N[which(N==way1)] <- way2; names(Mn) <- N
+  event <- list(op="recodeway2part",pars=c(way1,part,way2),desc=desc,date=date())
+  info$trace[[length(info$trace)+1]] <- event
+  return(list(format="MWnets",info=info,ways=Mw,nodes=Mn,links=Mt,data=Md)) 
+}
+
+# Mr <- recodeway2part(MN,"prov","IDreg","regs","region")
