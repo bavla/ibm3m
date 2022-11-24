@@ -2,7 +2,6 @@
 
 [Structure of a multiway network description in R](./structure.md)
 
-https://github.com/bavla/ibm3m/blob/master/multiway/structure.md
 
 ## MWnets
 
