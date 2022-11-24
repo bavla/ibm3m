@@ -160,4 +160,37 @@ recodeway2part <- function(MN,way1,part,way2,desc){
 # Mr <- recodeway2part(MN,"prov","IDreg","regs","region")
 # Mre <- flatten(Mr,"w",c("regs","univ","prog","year"))
 
+mwn2net <- function(MN,way1,way2,r=NULL,t=NULL,w=NULL,Net="Pajek.net",encoding="UTF-8"){
+  N <- MN$nodes; L <- MN$links; R <- NULL; T <- NULL
+  U <- N[[way1]]$ID[L[[way1]]]; V <- N[[way2]]$ID[L[[way2]]]
+  if(is.null(w)) W <- rep(1,length(L[[u]])) else W <- L[[w]]
+  if(!is.null(r)) R <- N[[r]]$ID[L[[r]]]
+  if(!is.null(t)) T <- N[[t]]$ID[L[[t]]]
+  uvrwt2net(U,V,w=W,r=R,t=T,Net=Net,twomode=TRUE,encoding=encoding)
+}
+
+# mwn2net(S2014,"prov","univ",r="prog",w="w",Net="S2014.net")
+
+mwn2clu <- function(MN,way,part,Clu="Pajek.clu",encoding="UTF-8"){
+  C <- MN$nodes[[way]][[part]]; n <- length(C); clu <- file(Clu,"w")
+  p <- factor(C); L <- levels(p)
+  cat("% mwn2clu",date(),"\n% Categories:\n",file=clu)
+  for(i in 1:length(L)) cat('% ',i,' "',L[i],'"\n',sep="",file=clu)
+  cat("*vertices",n,"\n",file=clu)
+  cat(as.integer(p),sep="\n",file=clu)
+  close(clu)
+}
+
+# mwn2clu(S2014,"prov","IDreg",Clu="regions.clu")
+
+mwn2vec <- function(MN,way,prop,Vec="Pajek.vec",encoding="UTF-8"){
+  V <- MN$nodes[[way]][[prop]]; n <- length(V); vec <- file(Vec,"w")
+  cat("% mwn2vec",date(),"\n*vertices",n,"\n",file=vec)
+  if(is.numeric(V)) cat(V,sep="\n",file=vec) else
+    for(i in 1:n) cat(i,' "',V[i],'"\n',sep='',file=vec)
+  close(vec)
+}
+
+# mwn2vec(S2014,"prov","area",Vec="area.vec")
+# mwn2vec(S2014,"prov","capital",Vec="capital.vec")
 
