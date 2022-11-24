@@ -90,6 +90,36 @@ Recodes the given link way `way1` according to its nodes partition `part` and st
 Mr <- recodeway2part(MN,"prov","IDreg","regs","region")
 Mre <- flatten(Mr,"w",c("regs","univ","prog","year"))
 ```
+
+### mwn2net(MN,way1,way2,r=NULL,t=NULL,w=NULL,Net="Pajek.net",encoding="UTF-8")
+
+Exports a multiway network `MN` to Pajek as a (multirelational temporal) two-mode network on node sets `way1` and `way2` (and optional relation  r=`way3` and time instance t=`way4`). Additional ways are producing parallel links.
+
+```
+# mwn2net(S2014,"prov","univ",r="prog",w="w",Net="S2014.net")
+```
+
+### mwn2clu(MN,way,part,Clu="Pajek.clu",encoding="UTF-8")
+
+Exports the node partition `way$part` as a Pajek clustering file. 
+
+```
+# mwn2clu(S2014,"prov","IDreg",Clu="regions.clu")
+```
+
+### mwn2vec(MN,way,prop,Vec="Pajek.vec",encoding="UTF-8")
+
+Exports the node property `way$prop` as a Pajek vector file if the property is numerical; otherwise it exports it as a numbered list. 
+
+```
+# mwn2vec(S2014,"prov","area",Vec="area.vec")
+# mwn2vec(S2014,"prov","capital",Vec="capital.vec")
+```
+
+
+
+
+
 ## magrittr
 ```
 > library(magrittr)
