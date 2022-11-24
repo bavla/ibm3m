@@ -78,9 +78,9 @@ plot(t,hang=-1,cex=0.8,main="Provinces / Ward")
 
 Recodes the given link weight `col1` into bins determined by vector `bins` and stores the resulting weights in `col2`.
 
-bins = (b1,b2, …, bk)
+$bins = (b_1,b_2, \ldots, b_k)$
 
-code(w) = i iff w in [ bi, b<i+1> )
+$code(w) = i$ iff $w \in [ b_i, b_{i+1} )$
 
 ```
 Mc <- recodecol2bins(MN,"w","code",bins=c(1,5,10,20,Inf))
