@@ -1,5 +1,9 @@
 # Analysis of multiway networks
 
+[Structure of a multiway network description in R](./structure.md)
+
+https://github.com/bavla/ibm3m/blob/master/multiway/structure.md
+
 ## MWnets
 
   - http://vladowiki.fmf.uni-lj.si/doku.php?id=vlado:work:2m:mwn:ops
