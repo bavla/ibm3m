@@ -74,8 +74,8 @@ Co[1:10,1:15]
 
 Computes the Salton similarity matrix from the given projection matrix `Co`.
 
-From the projection $p$ we can get the corresponding measure of similarity -- Salton index $S(u,t)$ [onBibNet]()
-$$ S(u,t) = \frac{p(u,t)}{\sqrt{p(u,u) \cdot p(t,t)}} $$
+From the projection $p$ we can get the corresponding measure of similarity -- Salton index $S(u,t)$ [onBibNet]().
+$$S(u,t) = \frac{p(u,t)}{\sqrt{p(u,u) \cdot p(t,t)}}$$
 that can be used for clustering the set $V_1$.
 ```
 Sal <- salton(Co); D <- as.dist(1-Sal)
