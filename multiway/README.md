@@ -61,8 +61,8 @@ Mj <- joinways(MN,"prog","univ","prun")
 
 Computes the projection matrix of the multiway network `MN` to the way `way` using the weight `w`.
 
-Assume that we selected the way $V_1$. A projection to a selected way is a generalization of the projection of two-mode networks. The projection creates an ordinary weighted network $(V_1,A,p)$, $A \subseteq V_1 \times V_1$ and $p : A \to \RR$. Let $u,t \in V_1$ then
-$$ p(u,t) = \sum_{(v_2,\ldots,v_k) \in V_2\times\cdots\times V_k} w(u,v_2,\ldots,v_k) \cdot w(t,v_2,\ldots,v_k) $$
+Assume that we selected the way $V_1$. A projection to a selected way is a generalization of the projection of two-mode networks. The projection creates an ordinary weighted network $(V_1,A,p)$, $A \subseteq V_1 \times V_1$ and $p : A \to R$. Let $u,t \in V_1$ then
+$ p(u,t) = \sum_{(v_2,\ldots,v_k) \in V_2\times\cdots\times V_k} w(u,v_2,\ldots,v_k) \cdot w(t,v_2,\ldots,v_k) $
 This network can be analyzed using traditional methods for the analysis of weighted networks. Sometimes it is more appropriate to apply projection(s) to a normalized version of the original multi-way network.
 ```
 Co <- projection(MN,"prov","w")
