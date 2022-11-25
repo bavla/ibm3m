@@ -29,6 +29,11 @@ MS <- slice(MN,"year==3")
 ### flatten(MN,col,by,FUN="sum")
 
 Removes ways that are not listed in the vector `by` and applies   `FUN` on the weights   `col` for so obtained duplicates.
+
+A selected way $V_i$ is removed from the network.
+$$V' = \{ V_1, V_2, \ldots, V_{i-1}, V_{i+1}, \ldots, V_k \}$$
+$$w'(v_1, v_2, \ldots, v_{i-1}, v_{i+1}, \ldots, v_k) = \sum_{v \in V_i} w(v_1, v_2, \ldots, v_{i-1},v, v_{i+1}, \ldots, v_k)$$
+
 ```
 MNf <- flatten(MN,"w",c("year","prov","univ"))
 Mf <- flatten(MN,"w",c("prov","univ"))
