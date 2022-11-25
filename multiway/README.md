@@ -30,7 +30,7 @@ MS <- slice(MN,"year==3")
 
 Removes ways that are not listed in the vector `by` and applies   `FUN` on the weights   `col` for so obtained duplicates.
 
-It can be used, `by` contains a complete list of ways, to aggregate duplicate links in original data. 
+It can be used, `by` contains a complete list of ways, to aggregate duplicate links in the original data. 
 
 A selected way $V_i$ is removed from the network.
 $$V' = ( V_1, V_2, \ldots, V_{i-1}, V_{i+1}, \ldots, V_k )$$
