@@ -90,6 +90,33 @@ t <- hclust(D,method="ward.D")
 plot(t,hang=-1,cex=0.8,main="Provinces / Ward")
 ```
 
+### projection2(MN,way,w,z)
+
+It is a generalization of the function `projection`. It computes the projection matrix of the multiway network `MN` to the way `way` using the weights `w` and `z`.
+
+The `projection2` creates an ordinary weighted network $(V_1,A,p_2)$, $A \subseteq V_1 \times V_1$ and $p_2 : A \to R$. 
+
+Let $u,t \in V_1$ then 
+$$p_2(u,t) = \sum_{(v_2,\ldots,v_k) \in V_2\times\cdots\times V_k} w(u,v_2,\ldots,v_k) \cdot z(t,v_2,\ldots,v_k).$$
+
+The main reason for introducing `projection2` is to provide support for an approach similar to that from the section
+"Bibliographic coupling and co-citation" from the paper [On fractional approach to analysis of linked networks](https://link.springer.com/article/10.1007/s11192-020-03383-y).
+
+It holds
+  - $p\langle w \rangle = p_2\langle w, w \rangle$
+  - $p_2\langle w, z \rangle = p_2\langle z, w \rangle$
+```
+Co <- projection(MN,"prog","w")
+Co2 <- projection2(MN,"prog","w","w")
+Co2[1:10,1:10] 
+Co[1:10,1:10]
+MN$links$one <- rep(1,length(MN$links[[w]]))
+CoA <- projection2(MN,"prog","w","one")
+CoB <- projection2(MN,"prog","one","w")
+CoA[1:10,1:10]
+CoB[1:10,1:10]
+```
+
 ### recodecol2bins(MN,col1,col2,bins=c(0,1e-323,Inf))
 
 Recodes the given link weight `col1` into bins determined by vector `bins` and stores the resulting weights in `col2`.
