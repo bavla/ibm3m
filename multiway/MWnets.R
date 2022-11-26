@@ -91,7 +91,7 @@ projection <- function(MN,way,w){
   MT <- MN$links[S]; Nt <- names(MT)[1:nw]
   ex <- paste("order(",paste(Nt,collapse=","),")",sep="")
   per <- with(MT,eval(str2expression(ex)))
-  MP <- with(MT,MT[per,])
+  MP <- MT[per,]
   I <- c(1); nm <- nw-1; nS <- length(MN$nodes[[way]]$ID)
   for(i in 2:nrow(MP)) if(!all(MP[i-1,1:nm]==MP[i,1:nm])) I <- c(I,i)
   I <- c(I,nrow(MP)+1)
@@ -119,6 +119,43 @@ salton <- function(Co){
   for(u in 1:(n-1)) for(v in (u+1):n) Sal[v,u] <- Sal[u,v] <- Co[u,v]/sqrt(Co[u,u]*Co[v,v])
   return(Sal)
 }
+
+projection2 <- function(MN,way,w,z){
+  Nw <- names(MN$ways); u <- which(Nw==way)
+  nw <- length(MN$ways); nc <- ncol(MN$links)
+  Nc <- names(MN$links); v <- which(Nc==w); t <- which(Nc==z)
+  S <- c((1:nw)[-u],u,v,t) 
+  MT <- MN$links[S]; Nt <- names(MT)[1:nw]
+  ex <- paste("order(",paste(Nt,collapse=","),")",sep="")
+  per <- with(MT,eval(str2expression(ex)))
+  MP <- MT[per,]
+  I <- c(1); nm <- nw-1; nS <- length(MN$nodes[[way]]$ID)
+  for(i in 2:nrow(MP)) if(!all(MP[i-1,1:nm]==MP[i,1:nm])) I <- c(I,i)
+  I <- c(I,nrow(MP)+1)
+  Co <- matrix(0,nrow=nS,ncol=nS)
+  colnames(Co) <- rownames(Co) <- MN$nodes[[way]]$ID
+  for(i in 1:(length(I)-1)){
+    i1 <- I[i]; i2 <- I[i+1]-1
+    for(j in i1:i2) {
+      u <- MP[[way]][j]
+      for(k in i1:i2){
+        v <- MP[[way]][k]
+        Co[u,v] <- Co[u,v] + MP[[w]][j] * MP[[z]][k]
+      }    
+    }
+  }
+  return(Co)
+}
+
+# Co <- projection(MN,"prog","w")
+# Co2 <- projection2(MN,"prog","w","w")
+# Co2[1:10,1:10] 
+# Co[1:10,1:10]
+# MN$links$one <- rep(1,length(MN$links[[w]]))
+# CoA <- projection2(MN,"prog","w","one")
+# CoB <- projection2(MN,"prog","one","w")
+# CoA[1:10,1:10]
+# CoB[1:10,1:10]
 
 recodecol2bins <- function(MN,col1,col2,bins=c(0,1e-323,Inf)){
   info <- MN$info; MNr <- MN$links
