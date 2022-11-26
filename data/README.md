@@ -7,7 +7,9 @@ The relation queried was "Who does X go to for advice and help with work?" ([KRA
 
 ## Random multiway network from IBM3M
 
+[Random35](https://raw.githubusercontent.com/bavla/ibm3m/master/data/random35.json)
+
 ## Lazega's lawyers / 36 partners
 
-[Layega](https://raw.githubusercontent.com/bavla/ibm3m/master/data/lazegaMN.json)
+[Lazega](https://raw.githubusercontent.com/bavla/ibm3m/master/data/lazegaMN.json)
 
