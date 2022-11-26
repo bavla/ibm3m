@@ -11,5 +11,5 @@ The relation queried was "Who does X go to for advice and help with work?" ([KRA
 
 ## Lazega's lawyers / 36 partners
 
-[Lazega](https://raw.githubusercontent.com/bavla/ibm3m/master/data/lazegaMN.json)
+[Lazega](https://raw.githubusercontent.com/bavla/ibm3m/master/data/lazega36.json)
 
