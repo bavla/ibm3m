@@ -1,5 +1,10 @@
 # Multiway network data sets
 
+| Left-aligned | Center-aligned | Right-aligned |
+| :---         |     :---:      |          ---: |
+| git status   | git status     | git status    |
+| git diff     | git diff       | git diff      |
+
 ## Krackhardt CSS
 
 Two networks from the paper Krackhardt D.(1987): [Cognitive social structures](https://www.heinz.cmu.edu/faculty-research/profiles/krackhardt-davidm/_files/1987-cognitive-social-structures.pdf). Social Networks, 9, 104-134.
