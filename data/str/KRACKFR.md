@@ -1,5 +1,6 @@
 # KRACKFR
 
+```
 List of 6
  $ format: chr "MWnets"
  $ info  :List of 7
@@ -31,3 +32,4 @@ List of 6
   ..$ report: num [1:790] 1 2 4 5 6 7 11 16 19 21 ...
   ..$ w     : num [1:790] 1 1 1 1 1 1 1 1 1 1 ...
  $ data  : list()
+```
