@@ -4,8 +4,8 @@
 | :---         |     :---       |     :---       |      :---:   |
 | [KRACKAD](https://raw.githubusercontent.com/bavla/ibm3m/master/data/KRACKAD.json)   | (advice, friend, report, w=1)    | (21, 21, 21, 2735)     | [str](https://github.com/bavla/ibm3m/blob/master/data/str/KRACKAD.md)     |
 | [KRACKFR](https://raw.githubusercontent.com/bavla/ibm3m/master/data/KRACKFR.json)   | (advice, friend, report, w=1)    | (21, 21, 21, 790)      | [str](https://github.com/bavla/ibm3m/blob/master/data/str/KRACKFR.md)     |
-| [Lazega](https://raw.githubusercontent.com/bavla/ibm3m/master/data/lazega36.json)   | git diff       | git diff       | git diff      |
-| [Random35](https://raw.githubusercontent.com/bavla/ibm3m/master/data/random35.json)   | git diff       | git diff       | git diff      |
+| [Lazega](https://raw.githubusercontent.com/bavla/ibm3m/master/data/lazega36.json)   | (way1, way2, way3, w=1)      | (36, 36, 36, 3045)       | [str](https://github.com/bavla/ibm3m/blob/master/data/str/Lazega36.md)      |
+| [Random35](https://raw.githubusercontent.com/bavla/ibm3m/master/data/random35.json)   | git diff       | git diff       | [str](https://github.com/bavla/ibm3m/blob/master/data/str/random35.md)     |
 | [AirEu2013](https://raw.githubusercontent.com/bavla/ibm3m/master/data/AirEu2013.json)  | (airA, airB, line, w=1)  | (450, 450, 37, 7176)   | [str](https://github.com/bavla/ibm3m/blob/master/data/str/AirEu2013.md)  |
 ## Krackhardt CSS
 
