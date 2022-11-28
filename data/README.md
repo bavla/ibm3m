@@ -4,7 +4,7 @@
 | :---         |     :---       |     :---       |      :---:   |
 | [KRACKAD](https://raw.githubusercontent.com/bavla/ibm3m/master/data/KRACKAD.json)   | git status     | git status     | git status    |
 | [KRACKFR](https://raw.githubusercontent.com/bavla/ibm3m/master/data/KRACKFR.json)   | git diff       | git diff       | git diff      |
-|   |   |    | [str](https://github.com/bavla/ibm3m/blob/master/data/str/AirEu2013.md)  |
+| [AirEu2013](https://raw.githubusercontent.com/bavla/ibm3m/master/data/AirEu2013.json)  | (airA, airB, line, w=1)  | (450, 450, 37, 7176)   | [str](https://github.com/bavla/ibm3m/blob/master/data/str/AirEu2013.md)  |
 ## Krackhardt CSS
 
 Two networks from the paper Krackhardt D.(1987): [Cognitive social structures](https://www.heinz.cmu.edu/faculty-research/profiles/krackhardt-davidm/_files/1987-cognitive-social-structures.pdf). Social Networks, 9, 104-134.
