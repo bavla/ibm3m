@@ -9,7 +9,7 @@
 
 <Scene>
 
-  <Background skyColor='1.0000 1.0000 1.0000'/>
+  <Background skyColor='0.8000 0.8000 0.8000'/>
 
   <Anchor description='1: a1'>
   <Transform translation='-2.85000 2.10000 -2.85000'>
