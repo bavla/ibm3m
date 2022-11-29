@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.0//EN"   "http://www.web3d.org/specifications/x3d-3.0.dtd">
+<X3D version='3.0' profile='Immersive' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.0.xsd'>
+<head>
+<meta name='title' content='1. C:\Users\vlado\docs\papers\2022\ifcs2022\x3d\test.net (16)'/>
+<meta name='created' content='11-29-2022'/>
+<meta name='generator' content='Andrej Mrvar and Vladimir Batagelj: Pajek 5.16: http://mrvar.fdv.uni-lj.si/pajek'/>
+</head>
+
+<Scene>
+
+  <Background skyColor='1.0000 1.0000 1.0000'/>
+
+  <Anchor description='1: a1'>
+  <Transform translation='-2.85000 2.10000 -2.85000'>
+  <Shape>              <!-- Vertex 1 -->
+    <Appearance><Material diffuseColor='1.0000 0.0000 0.0000'/></Appearance> 
+    <Sphere radius="0.500"/>
+  </Shape>
+  </Transform>
+  <Transform translation='-2.70000 2.10000 -2.85000'>
+  <Shape>
+    <Appearance> <Material diffuseColor='0.5020 0.0000 0.0000'/> </Appearance>
+    <Text string='"a1"'> <FontStyle family='"SANS"' size='0.20000' style='BOLD'/> </Text>
+  </Shape>
+  </Transform>
+  </Anchor>
+
+  <Anchor description='2: a2'>
+  <Transform translation='-2.85000 0.67500 -2.85000'>
+  <Shape>              <!-- Vertex 2 -->
+    <Appearance><Material diffuseColor='1.0000 0.0000 0.0000'/></Appearance> 
+    <Sphere radius="0.500"/>
+  </Shape>
+  </Transform>
+  <Transform translation='-2.70000 0.67500 -2.85000'>
+  <Shape>
+    <Appearance> <Material diffuseColor='0.5020 0.0000 0.0000'/> </Appearance>
+    <Text string='"a2"'> <FontStyle family='"SANS"' size='0.20000' style='BOLD'/> </Text>
+  </Shape>
+  </Transform>
+  </Anchor>
+
+  <Anchor description='3: a3'>
+  <Transform translation='-1.42500 2.10000 -2.85000'>
+  <Shape>              <!-- Vertex 3 -->
+    <Appearance><Material diffuseColor='1.0000 0.0000 0.0000'/></Appearance> 
+    <Sphere radius="0.500"/>
+  </Shape>
+  </Transform>
+  <Transform translation='-1.27500 2.10000 -2.85000'>
+  <Shape>
+    <Appearance> <Material diffuseColor='0.5020 0.0000 0.0000'/> </Appearance>
+    <Text string='"a3"'> <FontStyle family='"SANS"' size='0.20000' style='BOLD'/> </Text>
+  </Shape>
+  </Transform>
+  </Anchor>
+
+  <Anchor description='4: a4'>
+  <Transform translation='-1.42500 0.67500 -2.85000'>
+  <Shape>              <!-- Vertex 4 -->
+    <Appearance><Material diffuseColor='1.0000 0.0000 0.0000'/></Appearance> 
+    <Sphere radius="0.500"/>
+  </Shape>
+  </Transform>
+  <Transform translation='-1.27500 0.67500 -2.85000'>
+  <Shape>
+    <Appearance> <Material diffuseColor='0.5020 0.0000 0.0000'/> </Appearance>
+    <Text string='"a4"'> <FontStyle family='"SANS"' size='0.20000' style='BOLD'/> </Text>
+  </Shape>
+  </Transform>
+  </Anchor>
+
+  <Anchor description='5: a5'>
+  <Transform translation='-2.85000 2.10000 -1.42500'>
+  <Shape>              <!-- Vertex 5 -->
+    <Appearance><Material diffuseColor='1.0000 0.0000 0.0000'/></Appearance> 
+    <Sphere radius="0.500"/>
+  </Shape>
+  </Transform>
+  <Transform translation='-2.70000 2.10000 -1.42500'>
+  <Shape>
+    <Appearance> <Material diffuseColor='0.5020 0.0000 0.0000'/> </Appearance>
+    <Text string='"a5"'> <FontStyle family='"SANS"' size='0.20000' style='BOLD'/> </Text>
+  </Shape>
+  </Transform>
+  </Anchor>
+
+  <Anchor description='6: a6'>
+  <Transform translation='-2.85000 0.67500 -1.42500'>
+  <Shape>              <!-- Vertex 6 -->
+    <Appearance><Material diffuseColor='1.0000 0.0000 0.0000'/></Appearance> 
+    <Sphere radius="0.500"/>
+  </Shape>
+  </Transform>
+  <Transform translation='-2.70000 0.67500 -1.42500'>
+  <Shape>
+    <Appearance> <Material diffuseColor='0.5020 0.0000 0.0000'/> </Appearance>
+    <Text string='"a6"'> <FontStyle family='"SANS"' size='0.20000' style='BOLD'/> </Text>
+  </Shape>
+  </Transform>
+  </Anchor>
+
+  <Anchor description='7: a7'>
+  <Transform translation='-1.42500 2.10000 -1.42500'>
+  <Shape>              <!-- Vertex 7 -->
+    <Appearance><Material diffuseColor='1.0000 0.0000 0.0000'/></Appearance> 
+    <Sphere radius="0.500"/>
+  </Shape>
+  </Transform>
+  <Transform translation='-1.27500 2.10000 -1.42500'>
+  <Shape>
+    <Appearance> <Material diffuseColor='0.5020 0.0000 0.0000'/> </Appearance>
+    <Text string='"a7"'> <FontStyle family='"SANS"' size='0.20000' style='BOLD'/> </Text>
+  </Shape>
+  </Transform>
+  </Anchor>
+
+  <Anchor description='8: a8'>
+  <Transform translation='-1.42500 0.67500 -1.42500'>
+  <Shape>              <!-- Vertex 8 -->
+    <Appearance><Material diffuseColor='1.0000 0.0000 0.0000'/></Appearance> 
+    <Sphere radius="0.500"/>
+  </Shape>
+  </Transform>
+  <Transform translation='-1.27500 0.67500 -1.42500'>
+  <Shape>
+    <Appearance> <Material diffuseColor='0.5020 0.0000 0.0000'/> </Appearance>
+    <Text string='"a8"'> <FontStyle family='"SANS"' size='0.20000' style='BOLD'/> </Text>
+  </Shape>
+  </Transform>
+  </Anchor>
+
+  <Anchor description='9: b1'>
+  <Transform translation='1.42500 -0.75000 -1.42500'>
+  <Shape>              <!-- Vertex 9 -->
+    <Appearance><Material diffuseColor='0.0000 0.0000 1.0000'/></Appearance> 
+    <Sphere radius="0.500"/>
+  </Shape>
+  </Transform>
+  <Transform translation='1.57500 -0.75000 -1.42500'>
+  <Shape>
+    <Appearance> <Material diffuseColor='0.5020 0.0000 0.0000'/> </Appearance>
+    <Text string='"b1"'> <FontStyle family='"SANS"' size='0.20000' style='BOLD'/> </Text>
+  </Shape>
+  </Transform>
+  </Anchor>
+
+  <Anchor description='10: b2'>
+  <Transform translation='1.42500 -2.17500 -1.42500'>
+  <Shape>              <!-- Vertex 10 -->
+    <Appearance><Material diffuseColor='0.0000 0.0000 1.0000'/></Appearance> 
+    <Sphere radius="0.500"/>
+  </Shape>
+  </Transform>
+  <Transform translation='1.57500 -2.17500 -1.42500'>
+  <Shape>
+    <Appearance> <Material diffuseColor='0.5020 0.0000 0.0000'/> </Appearance>
+    <Text string='"b2"'> <FontStyle family='"SANS"' size='0.20000' style='BOLD'/> </Text>
+  </Shape>
+  </Transform>
+  </Anchor>
+
+  <Anchor description='11: b3'>
+  <Transform translation='2.85000 -0.75000 -1.42500'>
+  <Shape>              <!-- Vertex 11 -->
+    <Appearance><Material diffuseColor='0.0000 0.0000 1.0000'/></Appearance> 
+    <Sphere radius="0.500"/>
+  </Shape>
+  </Transform>
+  <Transform translation='3.00000 -0.75000 -1.42500'>
+  <Shape>
+    <Appearance> <Material diffuseColor='0.5020 0.0000 0.0000'/> </Appearance>
+    <Text string='"b3"'> <FontStyle family='"SANS"' size='0.20000' style='BOLD'/> </Text>
+  </Shape>
+  </Transform>
+  </Anchor>
+
+  <Anchor description='12: b4'>
+  <Transform translation='2.85000 -2.17500 -1.42500'>
+  <Shape>              <!-- Vertex 12 -->
+    <Appearance><Material diffuseColor='0.0000 0.0000 1.0000'/></Appearance> 
+    <Sphere radius="0.500"/>
+  </Shape>
+  </Transform>
+  <Transform translation='3.00000 -2.17500 -1.42500'>
+  <Shape>
+    <Appearance> <Material diffuseColor='0.5020 0.0000 0.0000'/> </Appearance>
+    <Text string='"b4"'> <FontStyle family='"SANS"' size='0.20000' style='BOLD'/> </Text>
+  </Shape>
+  </Transform>
+  </Anchor>
+
+  <Anchor description='13: b5'>
+  <Transform translation='1.42500 -0.75000 -0.00000'>
+  <Shape>              <!-- Vertex 13 -->
+    <Appearance><Material diffuseColor='0.0000 0.0000 1.0000'/></Appearance> 
+    <Sphere radius="0.500"/>
+  </Shape>
+  </Transform>
+  <Transform translation='1.57500 -0.75000 -0.00000'>
+  <Shape>
+    <Appearance> <Material diffuseColor='0.5020 0.0000 0.0000'/> </Appearance>
+    <Text string='"b5"'> <FontStyle family='"SANS"' size='0.20000' style='BOLD'/> </Text>
+  </Shape>
+  </Transform>
+  </Anchor>
+
+  <Anchor description='14: b6'>
+  <Transform translation='1.42500 -2.17500 -0.00000'>
+  <Shape>              <!-- Vertex 14 -->
+    <Appearance><Material diffuseColor='0.0000 0.0000 1.0000'/></Appearance> 
+    <Sphere radius="0.500"/>
+  </Shape>
+  </Transform>
+  <Transform translation='1.57500 -2.17500 -0.00000'>
+  <Shape>
+    <Appearance> <Material diffuseColor='0.5020 0.0000 0.0000'/> </Appearance>
+    <Text string='"b6"'> <FontStyle family='"SANS"' size='0.20000' style='BOLD'/> </Text>
+  </Shape>
+  </Transform>
+  </Anchor>
+
+  <Anchor description='15: b7'>
+  <Transform translation='2.85000 -0.75000 -0.00000'>
+  <Shape>              <!-- Vertex 15 -->
+    <Appearance><Material diffuseColor='0.0000 0.0000 1.0000'/></Appearance> 
+    <Sphere radius="0.500"/>
+  </Shape>
+  </Transform>
+  <Transform translation='3.00000 -0.75000 -0.00000'>
+  <Shape>
+    <Appearance> <Material diffuseColor='0.5020 0.0000 0.0000'/> </Appearance>
+    <Text string='"b7"'> <FontStyle family='"SANS"' size='0.20000' style='BOLD'/> </Text>
+  </Shape>
+  </Transform>
+  </Anchor>
+
+  <Anchor description='16: b8'>
+  <Transform translation='2.85000 -2.17500 -0.00000'>
+  <Shape>              <!-- Vertex 16 -->
+    <Appearance><Material diffuseColor='0.0000 0.0000 1.0000'/></Appearance> 
+    <Sphere radius="0.500"/>
+  </Shape>
+  </Transform>
+  <Transform translation='3.00000 -2.17500 -0.00000'>
+  <Shape>
+    <Appearance> <Material diffuseColor='0.5020 0.0000 0.0000'/> </Appearance>
+    <Text string='"b8"'> <FontStyle family='"SANS"' size='0.20000' style='BOLD'/> </Text>
+  </Shape>
+  </Transform>
+  </Anchor>
+
+</Scene>
+</X3D>
