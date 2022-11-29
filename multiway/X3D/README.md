@@ -8,3 +8,7 @@ https://github.com/alexoah/X3DOMPlayground
 
 https://github.com/create3000/x_ite
 
+https://github.com/topics/x3d
+
+https://doc.x3dom.org/tutorials/basics/hello/index.html
+
