@@ -14,4 +14,4 @@ https://doc.x3dom.org/tutorials/basics/hello/index.html
 
 http://thenewcode.com/1094/Using-JavaScript-in-SVG
 
-![](./X3DOMexample.svg)
+![](./X3Dexample.svg)
