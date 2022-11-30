@@ -1,0 +1,17 @@
+<svg width="500" height="400" xmlns="http://www.w3.org/2000/svg">
+<script xlink:href="http://www.x3dom.org/release/x3dom.js" />
+<foreignObject width="500" height="400">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+<x3d width='500px' height='400px'>
+    <scene>
+        <shape>
+            <appearance>
+                <material diffuseColor='1 0 0'></material>
+            </appearance>
+            <box></box>
+        </shape>
+    </scene>
+</x3d>
+    </div>
+</foreignObject>
+</svg>
