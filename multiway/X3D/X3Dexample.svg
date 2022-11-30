@@ -1,5 +1,6 @@
 <svg width="500" height="400" xmlns="http://www.w3.org/2000/svg">
 <script xlink:href="http://www.x3dom.org/release/x3dom.js" />
+<link xmlns="http://www.w3.org/1999/xhtml" rel="stylesheet" href="http://www.x3dom.org/release/x3dom.css" type="text/css"/>
 <foreignObject width="500" height="400">
     <div xmlns="http://www.w3.org/1999/xhtml">
 <x3d width='500px' height='400px'>
