@@ -12,4 +12,4 @@ https://github.com/topics/x3d
 
 https://doc.x3dom.org/tutorials/basics/hello/index.html
 
-![](./example.svg)
+![](./X3DOMexample.svg)
