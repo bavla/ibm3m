@@ -56,6 +56,13 @@ uncle.
 The sources of data were k=6 mutually exclusive groups of college students, each of whom received a set of 15 slips of paper, each containing one of the kinship terms. The paradigm for data collection was a “sorting” task, in which a subject is asked to produce a partition of the (15) objects, on the basis of perceived psychological similarity. Eighty-five male and eighty-five female subjects were run in the condition where subjects gave only a single-sort of the terms. A different group of subjects (eighty males and eight females) was told in advance that after making their first sort, they would be asked to give additional subjective partitions of these stimuli using “a different basis of meaning each time”. The authors used only the data of the first and second sorting for these groups of subjects. Thus, we have the k=6 conditions as our source for the analysis.
 
 Each subject's data can be coded as a symmetric 15×15 binary (0,1) co-occurrence matrix in which a one indicates that kinship terms of the corresponding row and column were sorted into the same group by the subject. The resulting co-occurrence matrices are then summed within each condition to yield an aggregate matrix. Thus, each of the six matrices is a similarity matrix. They were converted to dissimilarity ones by subtracting each entry from the number of subjects in the respective conditions.
+
+  - https://rdrr.io/cran/clue/man/Kinship82.html
+  - https://www.tandfonline.com/doi/abs/10.1207/s15327906mbr1004_7
+
+S. Rosenberg and M. P. Kim (1975). The method of sorting as a data-gathering procedure
+    in multivariate research. Multivariate Behavioral Research, 10, 489–502.
+    
 ## European airlines 2013
 
 [AirEu2013](https://raw.githubusercontent.com/bavla/ibm3m/master/data/AirEu2013.json)
