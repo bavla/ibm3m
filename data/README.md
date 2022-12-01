@@ -24,6 +24,10 @@ The relation queried was "Who does X go to for advice and help with work?" (KRAC
 
 [Random35](https://raw.githubusercontent.com/bavla/ibm3m/master/data/random35.json)
 
+## Politicians - Dissimilarity ratings of Second World War politicians by two subjects
+## Kinship - Rosenberg and Kim (1975) Kinship Terms
+
+
 ## European airlines 2013
 
 [AirEu2013](https://raw.githubusercontent.com/bavla/ibm3m/master/data/AirEu2013.json)
