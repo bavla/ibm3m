@@ -25,6 +25,13 @@ The relation queried was "Who does X go to for advice and help with work?" (KRAC
 [Random35](https://raw.githubusercontent.com/bavla/ibm3m/master/data/random35.json)
 
 ## Politicians - Dissimilarity ratings of Second World War politicians by two subjects
+
+http://vladowiki.fmf.uni-lj.si/doku.php?id=notes:da:clu:mul
+
+Dissimilarity ratings of 12  Second World War politicians  (Hitler, Mussolini, Churchill, Eisenhower, Stalin, Attlee, Franco, De Gaulle, MaoTseTung, Truman, Chamberlain, Tito) were made by two subjects.
+
+Source: B.S. Everitt: Introduction to optimization methods and their application in statistics. Chapman and Hall, London, 1987, p. 72.
+
 ## Kinship - Rosenberg and Kim (1975) Kinship Terms
 
 
