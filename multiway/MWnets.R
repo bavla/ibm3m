@@ -231,3 +231,51 @@ mwn2vec <- function(MN,way,prop,Vec="Pajek.vec",encoding="UTF-8"){
 # mwn2vec(S2014,"prov","area",Vec="area.vec")
 # mwn2vec(S2014,"prov","capital",Vec="capital.vec")
 
+mwnX3D <- function(MN,u,v,z,w,pu=NULL,pv=NULL,pz=NULL,
+  shape="Box",col=c(1,0,0),bg=c(0.8,0.8,0.8),maxsize=1,file="MWnets.x3d"){
+Ha <- '<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.0//EN" "http://www.web3d.org/specifications/x3d-3.0.dtd">
+<X3D version="3.0" profile="Immersive" xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" xsd:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-3.0.xsd">
+<head>
+<meta name="title" content="MWnets"/>
+<meta name="created" content="'
+Hb <- '"/>
+<meta name="generator" content="MWnets by Vladimir Batagelj: https://github.com/bavla/ibm3m/tree/master/multiway"/>
+</head>'
+B <- '
+<Scene>
+
+  <Background skyColor="'
+
+  x3d <- file(file,"w")
+  n <- length(MN$links[[w]]); nu <- length(MN$nodes[[u]]$ID)
+  nv <- length(MN$nodes[[v]]$ID); nz <- length(MN$nodes[[z]]$ID)
+  U <- MN$links[[u]]; V <- MN$links[[v]]; Z <- MN$links[[z]]
+  W <- MN$links[[w]]; maxw <- max(W)
+  if(is.null(pu)) pu <- 1:n
+  if(is.null(pv)) pv <- 1:n
+  if(is.null(pz)) pz <- 1:n
+
+cell <- function(i){
+  cat('  <Anchor description="link',i,'">\n',file=x3d)
+  cat('  <Transform translation="',pu[U[i]]-nu/2," ",nv/2-pv[V[i]]," ",
+    pz[Z[i]]-nz/2,'">\n',sep="",file=x3d)
+  cat('  <Shape>              <!-- Link ',i,' -->\n',
+    ' <Appearance><Material diffuseColor="',
+    if(length(col)==3) col else col[i,],
+    '"/></Appearance>\n',sep=" ",file=x3d) 
+  a <- maxsize*(W[i]/maxw)**(1/3)
+  if(shape=="Box") cat('  <Box size="',a,a,a,'"/>\n',file=x3d) else
+     cat('  <Sphere radius="',a/2,'"/>\n',file=x3d) 
+  cat('  </Shape>\n  </Transform>\n  </Anchor>\n\n',file=x3d)
+}
+
+  cat(Ha,date(),Hb,"\n",sep="",file=x3d) 
+  cat(B,bg,'"/>\n\n',file=x3d)
+  for(i in 1:n) cell(i)
+  cat('</Scene>\n</X3D>\n',file=x3d)
+  close(x3d)
+}
+
+
+
