@@ -63,7 +63,7 @@ reorderlinks <- function(MN,per=NULL){
 # str(Mo)
 # head(Mo$links)
 
-joinways <- function(MN,way1,way2,way3,sep="รท"){
+joinways <- function(MN,way1,way2,way3,sep="Aท"){
   info <- MN$info; Nw <- names(MN$ways)
   Nu <- MN$nodes[[way1]]$ID; Nv <- MN$nodes[[way2]]$ID
   i <- which(Nw==way1); j <- which(Nw==way2)
@@ -197,13 +197,13 @@ recodeway2part <- function(MN,way1,part,way2,desc){
 # Mr <- recodeway2part(MN,"prov","IDreg","regs","region")
 # Mre <- flatten(Mr,"w",c("regs","univ","prog","year"))
 
-mwn2net <- function(MN,way1,way2,r=NULL,t=NULL,w=NULL,Net="Pajek.net",encoding="UTF-8"){
+mwn2net <- function(MN,way1,way2,r=NULL,t=NULL,w=NULL,twomode=TRUE,Net="Pajek.net",encoding="UTF-8"){
   N <- MN$nodes; L <- MN$links; R <- NULL; T <- NULL
   U <- N[[way1]]$ID[L[[way1]]]; V <- N[[way2]]$ID[L[[way2]]]
   if(is.null(w)) W <- rep(1,length(L[[u]])) else W <- L[[w]]
   if(!is.null(r)) R <- N[[r]]$ID[L[[r]]]
   if(!is.null(t)) T <- N[[t]]$ID[L[[t]]]
-  uvrwt2net(U,V,w=W,r=R,t=T,Net=Net,twomode=TRUE,encoding=encoding)
+  uvrwt2net(U,V,w=W,r=R,t=T,Net=Net,twomode=twomode,encoding=encoding)
 }
 
 # mwn2net(S2014,"prov","univ",r="prog",w="w",Net="S2014.net")
