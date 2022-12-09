@@ -178,11 +178,13 @@ Exports the node property `way$prop` as a Pajek vector file if the property is n
 
 ## References
 
-- Vincenzo Giuseppe Genova, Giuseppe Giordano, Giancarlo Ragozini, Maria Prosperina Vitale: Clustering student mobility data in 3-way networks. IFCS 2022, Porto
-- J. Coleman, E. Katz, and H. Menzel.- "The Diffusion of an Innovation Among Physicians". Sociometry (1957) 20:253-270.
-- Krackhardt D.(1987). Cognitive social structures. Social Networks, 9, 104-134.
-- Kapferer B. (1972) - "Strategy and transaction in an African factory".
-- Emmanuel Lazega - "The Collegial Phenomenon: The Social Mechanisms of Cooperation Among Peers in a Corporate Law Partnership". Oxford University Press (2001)
-- Stephen P. Borgatti, Martin G. Everett: Regular blockmodels of multiway, multimode matrices. Social Networks 14 (1992) 31-120
-- Manlio de Domenico: [Data sets](https://manliodedomenico.com/data.php)
+- Batagelj, Vladimir; Ferligoj, Anuška; Doreian, Patrick: Indirect Blockmodeling of 3-Way Networks. In: Brito, P, Cucumel, G, Bertrand, P, de Carvalho, F (eds)
+Selected Contributions in Data Analysis and Classification pp 151–159, Springer, 2007; [preprint](http://vlado.fmf.uni-lj.si/vlado/papers/ibm3mode.pdf)
+- Borgatti, Stephen P.; Everett, Martin G.: Regular blockmodels of multiway, multimode matrices. Social Networks 14 (1992) 31-120
+- de Domenico, Manlio: [Data sets](https://manliodedomenico.com/data.php)
+- Genova, Vincenzo Giuseppe ; Giordano, Giuseppe; Ragozini, Giancarlo; Vitale, Maria Prosperina: Clustering student mobility data in 3-way networks. IFCS 2022, Porto
+- Coleman, J.; Katz, E.; Menzel, H.: The Diffusion of an Innovation Among Physicians. Sociometry (1957) 20:253-270.
+- Krackhardt, David: Cognitive social structures. Social Networks, 9 (1987), 104-134.
+- Kapferer, B.: Strategy and transaction in an African factory. (1972)
+- Lazega, Emmanuel: The Collegial Phenomenon: The Social Mechanisms of Cooperation Among Peers in a Corporate Law Partnership. Oxford University Press (2001)
 
