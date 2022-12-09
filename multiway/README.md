@@ -176,4 +176,13 @@ Exports the node property `way$prop` as a Pajek vector file if the property is n
 +   Mrw
 ```
 
+## References
+
+- Vincenzo Giuseppe Genova, Giuseppe Giordano, Giancarlo Ragozini, Maria Prosperina Vitale: Clustering student mobility data in 3-way networks. IFCS 2022, Porto
+- J. Coleman, E. Katz, and H. Menzel.- "The Diffusion of an Innovation Among Physicians". Sociometry (1957) 20:253-270.
+- Krackhardt D.(1987). Cognitive social structures. Social Networks, 9, 104-134.
+- Kapferer B. (1972) - "Strategy and transaction in an African factory".
+- Emmanuel Lazega - "The Collegial Phenomenon: The Social Mechanisms of Cooperation Among Peers in a Corporate Law Partnership". Oxford University Press (2001)
+- Stephen P. Borgatti, Martin G. Everett: Regular blockmodels of multiway, multimode matrices. Social Networks 14 (1992) 31-120
+- Manlio de Domenico: [Data sets](https://manliodedomenico.com/data.php)
 
