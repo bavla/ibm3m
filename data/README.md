@@ -24,6 +24,21 @@ The relation queried was "Who does X go to for advice and help with work?" (KRAC
 
 [Lazega](https://raw.githubusercontent.com/bavla/ibm3m/master/data/lazega36.json)
 
+## Robins bank - organizational structure in a bank branch
+
+Data from a study of structure in a number of branches of
+a large Australian bank (Robins, 1994; Robins, Pattison, 6 Langan-Fox, 1997).
+The relations presented are from one branch in response to
+questions: (1) With whom might you check out a course of action if an issue arises
+in your work? (the advice-seeking relation); (2) With whom do you feel that your
+work interactions are particularly satisfying? (the satisfying interaction relation);
+(3) In whom do you feel you would be able to confide if a problem arose that you
+did not want everyone to know about? (the confiding relation); (4) Whom do you
+consider to be a particularly close friend? (the close friend relation). We note that
+the first listed respondent is the Branch manager, the second is the deputy manager,
+the third, fourth, and fifth respondents are service advisers (a middle ranking
+position within the branch), and the remaining respondents are tellers.
+
 ## Random multiway network from IBM3M
 
 [Random35](https://raw.githubusercontent.com/bavla/ibm3m/master/data/random35.json)
