@@ -251,13 +251,15 @@ B <- '
   n <- length(MN$links[[w]]); nu <- length(MN$nodes[[u]]$ID)
   nv <- length(MN$nodes[[v]]$ID); nz <- length(MN$nodes[[z]]$ID)
   U <- MN$links[[u]]; V <- MN$links[[v]]; Z <- MN$links[[z]]
+  Nu <- MN$nodes[[u]]$ID; Nv <- MN$nodes[[v]]$ID; Nz <- MN$nodes[[z]]$ID
   W <- MN$links[[w]]; maxw <- max(W)
   if(is.null(pu)) pu <- 1:n
   if(is.null(pv)) pv <- 1:n
   if(is.null(pz)) pz <- 1:n
 
 cell <- function(i){
-  cat('  <Anchor description="link',i,'">\n',file=x3d)
+  cat('  <Anchor description="link',i,':',Nu[U[i]],',',Nv[V[i]],
+    ',',Nz[Z[i]],',',W[i],'">\n',file=x3d)
   cat('  <Transform translation="',pu[U[i]]-nu/2," ",nv/2-pv[V[i]]," ",
     pz[Z[i]]-nz/2,'">\n',sep="",file=x3d)
   cat('  <Shape>              <!-- Link ',i,' -->\n',
@@ -276,6 +278,10 @@ cell <- function(i){
   cat('</Scene>\n</X3D>\n',file=x3d)
   close(x3d)
 }
+
+# mwnX3D(MN,"prov","univ","prog","w",maxsize=1,col=cluCol,pu=I,pv=J,pz=K,file="students08Clux.x3d")
+
+
 
 
 
