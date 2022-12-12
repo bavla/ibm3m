@@ -63,7 +63,7 @@ reorderlinks <- function(MN,per=NULL){
 # str(Mo)
 # head(Mo$links)
 
-joinways <- function(MN,way1,way2,way3,sep="A·"){
+joinways <- function(MN,way1,way2,way3,sep="#"){
   info <- MN$info; Nw <- names(MN$ways)
   Nu <- MN$nodes[[way1]]$ID; Nv <- MN$nodes[[way2]]$ID
   i <- which(Nw==way1); j <- which(Nw==way2)
