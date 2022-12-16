@@ -167,7 +167,8 @@ Exports the node property `way$prop` as a Pajek vector file if the property is n
 Exports a 3D layout description of the 3-way (sub)network of network `MN` on ways `u`, `v`, `z` with weight `w` in X3D format to the selected `file`. The parameters `lu`, `lv`, `lz` are the names of node properties containing node labels.  The vectors `pu`, `pv`, `pz` contain the permutations of nodes in the corresponding ways. The parameter `shape` can be either "Box" or "Sphere". The parameter `col` specifies the color of each link, and `bg` the background color. The parameter `maxsize` controls the maximum size of the shape. 
 
 ```
-# mwnX3D(MN,"prov","univ","prog","w",lu="province",lv="long",lz="long",maxsize=1,col=cluCol,pu=I,pv=J,pz=K,file="students08Clux.x3d")
+# mwnX3D(MN,"prov","univ","prog","w",lu="province",lv="long",lz="long",maxsize=1,
++ col=cluCol,pu=I,pv=J,pz=K,file="students08Clux.x3d")
 ```
 
 
