@@ -231,7 +231,7 @@ mwn2vec <- function(MN,way,prop,Vec="Pajek.vec",encoding="UTF-8"){
 # mwn2vec(S2014,"prov","area",Vec="area.vec")
 # mwn2vec(S2014,"prov","capital",Vec="capital.vec")
 
-mwnX3D <- function(MN,u,v,z,w,pu=NULL,pv=NULL,pz=NULL,
+mwnX3D <- function(MN,u,v,z,w,pu=NULL,pv=NULL,pz=NULL,lu="ID",lv="ID",lz="ID",
   shape="Box",col=c(1,0,0),bg=c(0.8,0.8,0.8),maxsize=1,file="MWnets.x3d"){
 Ha <- '<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.0//EN" "http://www.web3d.org/specifications/x3d-3.0.dtd">
@@ -251,7 +251,7 @@ B <- '
   n <- length(MN$links[[w]]); nu <- length(MN$nodes[[u]]$ID)
   nv <- length(MN$nodes[[v]]$ID); nz <- length(MN$nodes[[z]]$ID)
   U <- MN$links[[u]]; V <- MN$links[[v]]; Z <- MN$links[[z]]
-  Nu <- MN$nodes[[u]]$ID; Nv <- MN$nodes[[v]]$ID; Nz <- MN$nodes[[z]]$ID
+  Nu <- MN$nodes[[u]][[lu]]; Nv <- MN$nodes[[v]][[lv]]; Nz <- MN$nodes[[z]][[lz]]
   W <- MN$links[[w]]; maxw <- max(W)
   if(is.null(pu)) pu <- 1:n
   if(is.null(pv)) pv <- 1:n
@@ -279,7 +279,7 @@ cell <- function(i){
   close(x3d)
 }
 
-# mwnX3D(MN,"prov","univ","prog","w",maxsize=1,col=cluCol,pu=I,pv=J,pz=K,file="students08Clux.x3d")
+# mwnX3D(MN,"prov","univ","prog","w",lu="province",lv="long",lz="long",maxsize=0.8,col=cluCol,pu=I,pv=J,pz=K,file="students08Clux.x3d")
 
 
 
