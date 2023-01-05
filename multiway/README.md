@@ -5,6 +5,7 @@
 
 ## MWnets
 
+  - http://vladowiki.fmf.uni-lj.si/doku.php?id=vlado:work:2m:mwn:genova:ana1
   - http://vladowiki.fmf.uni-lj.si/doku.php?id=vlado:work:2m:mwn:ops
   - https://raw.githubusercontent.com/bavla/ibm3m/master/multiway/MWnets.R
 
