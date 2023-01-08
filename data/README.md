@@ -14,7 +14,7 @@
 | [AirEu2013](https://raw.githubusercontent.com/bavla/ibm3m/master/data/AirEu2013Ext.json)  | (airA, airB, line, w=1)  | (450, 450, 37, 7176)   | [str](https://github.com/bavla/ibm3m/blob/master/data/str/AirEu2013.md)  |
 | students  | (prov, univ, prog, year, w)      | (107, 79, 11, 4, 37205)       | [str](https://github.com/bavla/ibm3m/blob/master/data/str/students.md)      |
 
-https://raw.githubusercontent.com/bavla/ibm3m/master/data/RobinsBank.json
+
 ## Krackhardt CSS
 
 Two networks from the paper Krackhardt D.(1987): [Cognitive social structures](https://www.heinz.cmu.edu/faculty-research/profiles/krackhardt-davidm/_files/1987-cognitive-social-structures.pdf). Social Networks, 9, 104-134.
