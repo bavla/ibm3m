@@ -70,7 +70,7 @@ head(Mo$links)
 
 ### joinways(MN,way1,way2,way3,sep="÷")
 
-Replaces a given pair of ways `way1` and `way2` with a new way `way3`. way3 = { a÷b : a way1 and b way2 co-appear in a multilink of MN }
+Replaces a given pair of ways `way1` and `way2` with a new way `way3`. way3 = { a÷b : a ∈ `way1` and b ∈ `way2` co-appear in a link of `MN` }
 ```
 Mj <- joinways(MN,"prog","univ","prun")
 ```
