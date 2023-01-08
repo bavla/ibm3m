@@ -300,5 +300,42 @@ relCore <- function(MN,way1,way2,way3){
 
 # core <- relCore(MN,"airA","airB","line")
 
+relCore2 <- function(MN,way1,way2,way3){
+  U <- MN$links[[way1]]; V <- MN$links[[way2]]; R <- MN$links[[way3]]
+  n1 <- length(MN$nodes[[way1]]$ID); n2 <- length(MN$nodes[[way2]]$ID)
+  n <- n1+n2; dmin <- -1
+  m <- length(U); act <- rep(TRUE,n); I <- 1:m; core <- rep(NA,n) 
+  while(any(act)){
+    C <- vector("list",n)
+    for(i in I){ u <- U[i]; v <- n1+V[i]
+      if(act[u]&&act[v]){ r <- R[i]
+        C[[u]] <- union(C[[u]],r); C[[v]] <- union(C[[v]],r)
+      } else I <- setdiff(I, i)
+    }
+    deg <- sapply(C,length); dmin <- max(dmin,min(deg[act]))
+    sel <- which((deg<=dmin)&act); core[sel] <- dmin; act[sel] <- FALSE
+  }
+  res <- list(); res[[way1]] <- core[1:n1]; res[[way2]] <- core[(n1+1):n]
+  return(res)
+}
 
+
+# core <- relCore2(S,"prov","univ","prog")
+
+extract <- function(MN,ways,clus){
+  N <- MN$nodes; L <- MN$links; info <- MN$info
+  P <- paste(paste(ways,clus,sep="/"),collapse=",")
+  event <- list(op="extract",P=P,date=date())
+  info$trace[[length(info$trace)+1]] <- event
+  for(i in 1:length(ways)){ clu <- eval(str2expression(clus[i]))
+    N[[ways[i]]] <- N[[ways[i]]][clu,]
+    L[[ways[i]]] <- as.integer(factor(L[[ways[i]]],levels=clu))
+  }
+  Sc <- list(format="MWnets",info=info,ways=MN$ways,
+    nodes=N,links=L,data<-MN$data)
+  return(Sc)
+}
+
+
+# Score <- extract(S10,c("prov","univ"),c("w1","w2"))
 
