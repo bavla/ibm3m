@@ -148,6 +148,30 @@ Mr <- recodeway2part(MN,"prov","IDreg","regs","region")
 Mre <- flatten(Mr,"w",c("regs","univ","prog","year"))
 ```
 
+### relCore(MN,way1,way2,way3)
+
+Determine the relational core of the multiway network `MN` for nodes of `way1` and `way2` of the same mode and relational way `way3`.
+
+http://vladowiki.fmf.uni-lj.si/doku.php?id=vlado:work:2m:mwn:rcores
+
+```
+> core <- relCore(MN,"airA","airB","line")
+```
+
+### relCore2(MN,way1,way2,way3)
+
+Determine the two-mode relational core of the multiway network `MN` for nodes of `way1` and `way2` (of different modes) and relational way `way3`.
+
+```
+> core <- relCore2(S,"prov","univ","prog")
+> str(core)
+List of 2
+ $ prov: num [1:107] 9 9 10 10 9 9 10 7 10 9 ...
+ $ univ: num [1:79] 7 2 6 2 7 8 8 3 9 2 ...
+```
+
+
+
 ### mwn2net(MN,way1,way2,r=NULL,t=NULL,w=NULL,Net="Pajek.net",encoding="UTF-8")
 
 Exports a multiway network `MN` to Pajek as a (multirelational temporal) two-mode network on node sets `way1` and `way2` (and optional relation  r=`way3` and time instance t=`way4`). Additional ways are producing parallel links.
