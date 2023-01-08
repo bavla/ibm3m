@@ -27,6 +27,16 @@ Extract from the multiway network `MN` a subnetwork of links satisfying a predic
 MS <- slice(MN,"year==3")
 ```
 
+### extract(MN,ways,clus)
+
+Extract from the multiway network `MN` a subnetwork determined by selected ways and corresponding clusters (vectors containing list of nodes).
+```
+w1 <- (1:107)[core$prov==10]
+w2 <- (1:79)[core$univ==10]
+Score <- extract(S10,c("prov","univ"),c("w1","w2"))
+```
+
+
 ### flatten(MN,col,by,FUN="sum")
 
 Removes ways that are not listed in the vector `by` and applies   `FUN` on the weights   `col` for so obtained duplicates.
