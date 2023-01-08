@@ -281,7 +281,24 @@ cell <- function(i){
 
 # mwnX3D(MN,"prov","univ","prog","w",lu="province",lv="long",lz="long",maxsize=0.8,col=cluCol,pu=I,pv=J,pz=K,file="students08Clux.x3d")
 
+relCore <- function(MN,way1,way2,way3){
+  U <- MN$links[[way1]]; V <- MN$links[[way2]]; R <- MN$links[[way3]]
+  n <- length(MN$nodes[[way1]]$ID); dmin <- -1
+  m <- length(U); act <- rep(TRUE,n); I <- 1:m; core <- rep(NA,n) 
+  while(any(act)){
+    C <- vector("list",n)
+    for(i in I){ u <- U[i]; v <- V[i]
+      if(act[u]&&act[v]){ r <- R[i]
+        C[[u]] <- union(C[[u]],r); C[[v]] <- union(C[[v]],r)
+      } else I <- setdiff(I, i)
+    }
+    deg <- sapply(C,length); dmin <- max(dmin,min(deg[act]))
+    sel <- which((deg<=dmin)&act); core[sel] <- dmin; act[sel] <- FALSE
+  }
+  return(core)
+}
 
+# core <- relCore(MN,"airA","airB","line")
 
 
 
