@@ -177,7 +177,7 @@ List of 2
 Exports a multiway network `MN` to Pajek as a (multirelational temporal) two-mode network on node sets `way1` and `way2` (and optional relation  r=`way3` and time instance t=`way4`). Additional ways are producing parallel links.
 
 ```
-# mwn2net(S2014,"prov","univ",r="prog",w="w",Net="S2014.net")
+mwn2net(S2014,"prov","univ",r="prog",w="w",Net="S2014.net")
 ```
 
 ### mwn2clu(MN,way,part,Clu="Pajek.clu",encoding="UTF-8")
@@ -185,7 +185,7 @@ Exports a multiway network `MN` to Pajek as a (multirelational temporal) two-mod
 Exports the node partition `way$part` as a Pajek clustering file. 
 
 ```
-# mwn2clu(S2014,"prov","IDreg",Clu="regions.clu")
+mwn2clu(S2014,"prov","IDreg",Clu="regions.clu")
 ```
 
 ### mwn2vec(MN,way,prop,Vec="Pajek.vec",encoding="UTF-8")
@@ -193,8 +193,8 @@ Exports the node partition `way$part` as a Pajek clustering file.
 Exports the node property `way$prop` as a Pajek vector file if the property is numerical; otherwise it exports it as a numbered list. 
 
 ```
-# mwn2vec(S2014,"prov","area",Vec="area.vec")
-# mwn2vec(S2014,"prov","capital",Vec="capital.vec")
+mwn2vec(S2014,"prov","area",Vec="area.vec")
+mwn2vec(S2014,"prov","capital",Vec="capital.vec")
 ```
 
 ### mwnX3D(MN,u,v,z,w,lu="ID",lv="ID",lz="ID",pu=NULL,pv=NULL,pz=NULL,shape="Box",col=c(1,0,0),bg=c(0.8,0.8,0.8),maxsize=1,file="MWnets.x3d")
@@ -202,7 +202,7 @@ Exports the node property `way$prop` as a Pajek vector file if the property is n
 Exports a 3D layout description of the 3-way (sub)network of network `MN` on ways `u`, `v`, `z` with weight `w` in X3D format to the selected `file`. The parameters `lu`, `lv`, `lz` are the names of node properties containing node labels.  The vectors `pu`, `pv`, `pz` contain the permutations of nodes in the corresponding ways. The parameter `shape` can be either "Box" or "Sphere". The parameter `col` specifies the color of each link, and `bg` the background color. The parameter `maxsize` controls the maximum size of the shape. 
 
 ```
-# mwnX3D(MN,"prov","univ","prog","w",lu="province",lv="long",lz="long",maxsize=1,
+> mwnX3D(MN,"prov","univ","prog","w",lu="province",lv="long",lz="long",maxsize=1,
 + col=cluCol,pu=I,pv=J,pz=K,file="students08Clux.x3d")
 ```
 
