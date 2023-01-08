@@ -5,7 +5,7 @@
 | [KRACKAD](https://raw.githubusercontent.com/bavla/ibm3m/master/data/KRACKAD.json)   | (advice, friend, report, w=1)    | (21, 21, 21, 2735)     | [str](https://github.com/bavla/ibm3m/blob/master/data/str/KRACKAD.md)     |
 | [KRACKFR](https://raw.githubusercontent.com/bavla/ibm3m/master/data/KRACKFR.json)   | (advice, friend, report, w=1)    | (21, 21, 21, 790)      | [str](https://github.com/bavla/ibm3m/blob/master/data/str/KRACKFR.md)     |
 | [Lazega](https://raw.githubusercontent.com/bavla/ibm3m/master/data/lazega36.json)   | (way1, way2, way3, w=1)      | (36, 36, 36, 3045)       | [str](https://github.com/bavla/ibm3m/blob/master/data/str/Lazega36.md)      |
-| [RobinsBank](https://raw.githubusercontent.com/bavla/ibm3m/master/data/robinsbank.json)   | (P1, P2, R, w=1)      | (11, 11, 4, 128)       | [str](https://github.com/bavla/ibm3m/blob/master/data/str/RobinsBank.md)      |
+| [RobinsBank](https://raw.githubusercontent.com/bavla/ibm3m/master/data/RobinsBank.json)   | (P1, P2, R, w=1)      | (11, 11, 4, 128)       | [str](https://github.com/bavla/ibm3m/blob/master/data/str/RobinsBank.md)      |
 | [Random35](https://raw.githubusercontent.com/bavla/ibm3m/master/data/random35.json)   | (X, Y, Z, w=1)      | (35, 35, 35, 12777)      | [str](https://github.com/bavla/ibm3m/blob/master/data/str/random35.md)     |
 | [CSaarhus](https://raw.githubusercontent.com/bavla/ibm3m/master/data/csaarhus.json)   | (P1, P2, R, w=1)      | (61, 61, 5, 620)      | [str](https://github.com/bavla/ibm3m/blob/master/data/str/CSaarhus.md)     |
 | [Vickers](https://raw.githubusercontent.com/bavla/ibm3m/master/data/Vickers.json)   | (S1, S1, R, w=1)      | (29, 29, 3, 740)      | [str](https://github.com/bavla/ibm3m/blob/master/data/str/vickers.md)     |
