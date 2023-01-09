@@ -2,7 +2,7 @@
 
 | Network | Columns |  Sizes | Structure |
 | :---         |     :---       |     :---       |      :---:   |
-| [VisTest](https://raw.githubusercontent.com/bavla/ibm3m/master/data/VisTest.json)   | (SOURCE, TARGET, LINKTYPE, DATE, WEIGHT)    | (21, 21, 21, 2735)     | [str](https://github.com/bavla/ibm3m/blob/master/data/str/VisTest.md)     |
+| [VisTest](https://raw.githubusercontent.com/bavla/ibm3m/master/data/VisTest.json)   | (SOURCE, TARGET, LINKTYPE, DATE, WEIGHT)    | (8, 8, 4, 4, 18)     | [str](https://github.com/bavla/ibm3m/blob/master/data/str/VisTest.md)     |
 | [KRACKAD](https://raw.githubusercontent.com/bavla/ibm3m/master/data/KRACKAD.json)   | (advice, friend, report, w=1)    | (21, 21, 21, 2735)     | [str](https://github.com/bavla/ibm3m/blob/master/data/str/KRACKAD.md)     |
 | [KRACKFR](https://raw.githubusercontent.com/bavla/ibm3m/master/data/KRACKFR.json)   | (advice, friend, report, w=1)    | (21, 21, 21, 790)      | [str](https://github.com/bavla/ibm3m/blob/master/data/str/KRACKFR.md)     |
 | [Lazega](https://raw.githubusercontent.com/bavla/ibm3m/master/data/lazega36.json)   | (way1, way2, way3, w=1)      | (36, 36, 36, 3045)       | [str](https://github.com/bavla/ibm3m/blob/master/data/str/Lazega36.md)      |
