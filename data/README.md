@@ -12,6 +12,7 @@
 | [Vickers](https://raw.githubusercontent.com/bavla/ibm3m/master/data/Vickers.json)   | (S1, S1, R, w=1)      | (29, 29, 3, 740)      | [str](https://github.com/bavla/ibm3m/blob/master/data/str/vickers.md)     |
 | [Polit](https://raw.githubusercontent.com/bavla/ibm3m/master/data/polit.json)   | (P1, P2, S, w)      | (12, 12, 2, 288)      | [str](https://github.com/bavla/ibm3m/blob/master/data/str/polit.md)     |
 | [Kinship](https://raw.githubusercontent.com/bavla/ibm3m/master/data/kinship.json)   | (T1, T2, K, w)      | (15, 15, 6, 1350)      | [str](https://github.com/bavla/ibm3m/blob/master/data/str/kinship.md)     |
+| [tableware](https://raw.githubusercontent.com/bavla/ibm3m/master/data/tableware.json)   | (T1, T2, K, w)      | (15, 15, 6, 1350)      | [str](https://github.com/bavla/ibm3m/blob/master/data/str/tableware.md)     |
 | [AirEu2013](https://raw.githubusercontent.com/bavla/ibm3m/master/data/AirEu2013Ext.json)  | (airA, airB, line, w=1)  | (450, 450, 37, 7176)   | [str](https://github.com/bavla/ibm3m/blob/master/data/str/AirEu2013.md)  |
 | students  | (prov, univ, prog, year, w)      | (107, 79, 11, 4, 37205)       | [str](https://github.com/bavla/ibm3m/blob/master/data/str/students.md)      |
 
