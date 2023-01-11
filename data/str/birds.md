@@ -1,5 +1,8 @@
 # Birds
 
+
+| Network | Sizes |
+| :---         |     :---       |
 | ARU_01.json  | ( 10 , 10 , 6 , 345 )  |
 | ARU_02.json  | ( 6 , 6 , 6 , 112 )  |
 | BER_01.json  | ( 9 , 9 , 6 , 266 )  |
