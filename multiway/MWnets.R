@@ -327,15 +327,16 @@ extract <- function(MN,ways,clus){
   P <- paste(paste(ways,clus,sep="/"),collapse=",")
   event <- list(op="extract",P=P,date=date())
   info$trace[[length(info$trace)+1]] <- event
+  OK <- rep(TRUE,nrow(MN$links))
   for(i in 1:length(ways)){ clu <- eval(str2expression(clus[i]))
     N[[ways[i]]] <- N[[ways[i]]][clu,]
     L[[ways[i]]] <- as.integer(factor(L[[ways[i]]],levels=clu))
+    OK <- OK & !is.na(L[[ways[i]]])
   }
   Sc <- list(format="MWnets",info=info,ways=MN$ways,
-    nodes=N,links=L,data<-MN$data)
+    nodes=N,links=L[OK,],data=MN$data)
   return(Sc)
 }
-
 
 # Score <- extract(S10,c("prov","univ"),c("w1","w2"))
 
