@@ -3,6 +3,8 @@
 # https://github.com/bavla/ibm3m/tree/master/multiway
 # source("https://raw.githubusercontent.com/bavla/ibm3m/master/multiway/MWnets.R")
 
+inv <- function(p){q <- p; q[p] <- 1:length(p); return(q)}
+
 reorderways <- function(MN,ord){
   Cols <- colnames(MN$links); info <- MN$info
   if(!is.numeric(ord)) ord <- match(ord,Cols)
