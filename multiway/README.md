@@ -169,8 +169,32 @@ List of 2
  $ prov: num [1:107] 9 9 10 10 9 9 10 7 10 9 ...
  $ univ: num [1:79] 7 2 6 2 7 8 8 3 9 2 ...
 ```
+### p(MN,u,C,way1,way2,...)
+Returns a node property of the node u for cluster C and selected ways way1 and way2. The function p can be selected among
 
+#### pDeg(MN,u,C,way1,way2)
+Degree of the node u.
 
+#### pSum(MN,u,C,way1,way2,weight=)
+Sum of weights of links in the node u.
+
+#### pMax(MN,u,C,way1,way2,weight=)
+Maximum of weights of links in the node u.
+
+#### pRel(MN,u,C,way1,way2,way3=)
+Number of different realations of type way3 in the node u.
+
+### GenCoresDec(MN,way1,way2,way3=,weight=)
+Generalized cores decomposition of the multiway network MN for the node property p.
+
+```
+> p <- pRel
+> (core <- GenCoresDec(MV,"SOURCE","TARGET",way3="LINKTYPE"))
+> p <- pSum
+> (core <- GenCoresDec(MV,"SOURCE","TARGET",weight="WEIGHT"))
+> p <- pDeg
+> (core <- GenCoresDec(MV,"SOURCE","TARGET"))
+```
 
 ### mwn2net(MN,way1,way2,r=NULL,t=NULL,w=NULL,Net="Pajek.net",encoding="UTF-8")
 
