@@ -194,6 +194,10 @@ p <- pSum
 core <- GenCoresDec(MV,"SOURCE","TARGET",weight="WEIGHT")
 p <- pDeg
 core <- GenCoresDec(MV,"SOURCE","TARGET")
+EU <- fromJSON("https://raw.githubusercontent.com/bavla/ibm3m/master/data/AirEu2013Ext.json")
+core1 <- relCore(EU,"airA","airB","line")
+p <- pRel
+core2 <- GenCoresDec(EU,"airA","airB",way3="line")
 ```
 
 ### mwn2net(MN,way1,way2,r=NULL,t=NULL,w=NULL,Net="Pajek.net",encoding="UTF-8")
