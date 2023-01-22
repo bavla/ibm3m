@@ -344,28 +344,34 @@ extract <- function(MN,ways,clus){
 
 # Score <- extract(S10,c("prov","univ"),c("w1","w2"))
 
-pSum <- function(MN,u,C,way1,way2,w="w"){
-  L <- MN$links; IU <- which(L[[way1]]==u) 
-  IC <- IU[L[[way2]][IU] %in% C]
-  return(sum(L[[w]][IC]))
-}
-
-pDeg <- function(MN,u,C,way1,way2,w="w"){
+pDeg <- function(MN,u,C,way1,way2,...){
   L <- MN$links; IU <- which(L[[way1]]==u) 
   IC <- IU[L[[way2]][IU] %in% C]
   return(length(IC))
 }
 
-pMax <- function(MN,u,C,way1,way2,w="w"){
+pSum <- function(MN,u,C,way1,way2,...){
   L <- MN$links; IU <- which(L[[way1]]==u) 
-  IC <- IU[L[[way2]][IU] %in% C]
-  return(max(L[[w]][IC]))
+  W <- L[[weight]][IU[L[[way2]][IU] %in% C]]
+  return(sum(W))
 }
 
-GenCoresDec <- function(MN,way1,way2,way3=NULL,w="w"){
+pMax <- function(MN,u,C,way1,way2,...){
+  L <- MN$links; IU <- which(L[[way1]]==u) 
+  W <- L[[weight]][IU[L[[way2]][IU] %in% C]]
+  return(max(W))
+}
+
+pRel <- function(MN,u,C,way1,way2,...){
+  L <- MN$links; IU <- which(L[[way1]]==u) 
+  IC <- IU[L[[way2]][IU] %in% C]
+  return(length(union(NULL,L[[way3]][IC])))
+}
+
+GenCoresDec <- function(MN,way1,way2,...){ # way3=, weight=
   n <- nrow(MN$nodes[[1]]); C <- 1:n; core <- P <- rep(NA,n)
   L <- MN$links; H <- fibonacci_heap("numeric")
-  for(v in 1:n) P[v] <- p(MN,v,C,way1,way2,w=w)  
+  for(v in 1:n) P[v] <- p(MN,v,C,way1,way2,...)  
   H <- insert(H,as.numeric(P),1:n); mval <- 0
   while(size(H)>0){
     t <- pop(H); val <- as.numeric(names(t)); t <- t[[1]]
@@ -373,7 +379,7 @@ GenCoresDec <- function(MN,way1,way2,way3=NULL,w="w"){
     IU <- which(L[[way1]]==t) 
     NtC <- IU[L[[way2]][IU] %in% C]
     for(e in NtC){
-      v <- L[[way2]][e]; pv <- as.numeric(p(MN,v,C,way1,way2,w=w))
+      v <- L[[way2]][e]; pv <- as.numeric(p(MN,v,C,way1,way2,...))
       hand <- handle(H,value=as.integer(v))[[1]]
       if(pv<hand$key) decrease_key(H,hand$key,pv,hand$handle)
     }
@@ -386,4 +392,9 @@ GenCoresDec <- function(MN,way1,way2,way3=NULL,w="w"){
 # p <- pMax
 # for(v in 1:8) cat(v,p(MN,v,C,"U","V","w"),"\n")
 # (core <- GenCoresDec(MN,"U","V",w="w"))
-
+# p <- pRel
+# (core <- GenCoresDec(MV,"SOURCE","TARGET",way3="LINKTYPE"))
+# p <- pSum
+# (core <- GenCoresDec(MV,"SOURCE","TARGET",weight="WEIGHT"))
+# p <- pDeg
+# (core <- GenCoresDec(MV,"SOURCE","TARGET"))
