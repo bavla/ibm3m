@@ -188,12 +188,12 @@ Number of different realations of type way3 in the node u.
 Generalized cores decomposition of the multiway network MN for the node property p.
 
 ```
-> p <- pRel
-> (core <- GenCoresDec(MV,"SOURCE","TARGET",way3="LINKTYPE"))
-> p <- pSum
-> (core <- GenCoresDec(MV,"SOURCE","TARGET",weight="WEIGHT"))
-> p <- pDeg
-> (core <- GenCoresDec(MV,"SOURCE","TARGET"))
+p <- pRel
+core <- GenCoresDec(MV,"SOURCE","TARGET",way3="LINKTYPE")
+p <- pSum
+core <- GenCoresDec(MV,"SOURCE","TARGET",weight="WEIGHT")
+p <- pDeg
+core <- GenCoresDec(MV,"SOURCE","TARGET")
 ```
 
 ### mwn2net(MN,way1,way2,r=NULL,t=NULL,w=NULL,Net="Pajek.net",encoding="UTF-8")
