@@ -4,9 +4,9 @@
 | Network | Columns |  Sizes | Structure |
 | :---         |     :---       |     :---       |      :---:   |
 | [VisTest](https://raw.githubusercontent.com/bavla/ibm3m/master/data/VisTest.json)   | (SOURCE, TARGET, LINKTYPE, DATE, WEIGHT)    | (8, 8, 4, 4, 18)     | [str](https://github.com/bavla/ibm3m/blob/master/data/str/VisTest.md)     |
-| [CoresTest](https://raw.githubusercontent.com/bavla/ibm3m/master/data/coresTest.json)   | (U, V, w)    | (20, 20, 56)     | [str](https://github.com/bavla/ibm3m/blob/master/data/str/coresTest.md)     |
+| [CoresTest](https://raw.githubusercontent.com/bavla/ibm3m/master/data/coresTest.json)   | (U, V, w=1)    | (20, 20, 56)     | [str](https://github.com/bavla/ibm3m/blob/master/data/str/coresTest.md)     |
 | [GcoresTest](https://raw.githubusercontent.com/bavla/ibm3m/master/data/GcoresTest.json)   | (U, V, w)    | (8, 8, 32)     | [str](https://github.com/bavla/ibm3m/blob/master/data/str/GcoresTest.md)     |
-| [TwoModeTest](https://raw.githubusercontent.com/bavla/ibm3m/master/TwoModeTest.json)   | (U, V, w)    | (6, 8, 25)     | [str](https://github.com/bavla/ibm3m/blob/master/data/str/TwoModeTest.md)     |
+| [TwoModeTest](https://raw.githubusercontent.com/bavla/ibm3m/master/TwoModeTest.json)   | (U, V, w=1)    | (6, 8, 25)     | [str](https://github.com/bavla/ibm3m/blob/master/data/str/TwoModeTest.md)     |
 | [KRACKAD](https://raw.githubusercontent.com/bavla/ibm3m/master/data/KRACKAD.json)   | (advice, friend, report, w=1)    | (21, 21, 21, 2735)     | [str](https://github.com/bavla/ibm3m/blob/master/data/str/KRACKAD.md)     |
 | [KRACKFR](https://raw.githubusercontent.com/bavla/ibm3m/master/data/KRACKFR.json)   | (advice, friend, report, w=1)    | (21, 21, 21, 790)      | [str](https://github.com/bavla/ibm3m/blob/master/data/str/KRACKFR.md)     |
 | [Lazega](https://raw.githubusercontent.com/bavla/ibm3m/master/data/lazega36.json)   | (way1, way2, way3, w=1)      | (36, 36, 36, 3045)       | [str](https://github.com/bavla/ibm3m/blob/master/data/str/Lazega36.md)      |
