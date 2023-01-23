@@ -1,5 +1,7 @@
 # Multiway network data sets
 
+http://vladowiki.fmf.uni-lj.si/doku.php?id=vlado:work:2m:mwn:tnet
+
 | Network | Columns |  Sizes | Structure |
 | :---         |     :---       |     :---       |      :---:   |
 | [VisTest](https://raw.githubusercontent.com/bavla/ibm3m/master/data/VisTest.json)   | (SOURCE, TARGET, LINKTYPE, DATE, WEIGHT)    | (8, 8, 4, 4, 18)     | [str](https://github.com/bavla/ibm3m/blob/master/data/str/VisTest.md)     |
