@@ -442,5 +442,6 @@ remove <- function(MN,Ha,Hb,waya,wayb,Ca,Cb,fb,ta,...){
 # EU <- fromJSON("https://raw.githubusercontent.com/bavla/ibm3m/master/data/AirEu2013Ext.json")
 # core1 <- relCore(EU,"airA","airB","line")
 # core2 <- GenCoresDec(EU,"airA","airB",way3="line",p=pRel)
-
+# cores <- Gen2modeCore(MA,"an","pl",pDeg,pDeg,4,4)
+# report2modeCore(MA,"an","pl",pDeg,pDeg,cores)
 
