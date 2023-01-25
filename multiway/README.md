@@ -170,22 +170,22 @@ List of 2
  $ univ: num [1:79] 7 2 6 2 7 8 8 3 9 2 ...
 ```
 ### p(MN,u,C,way1,way2,...)
-Returns a node property of the node u for cluster C and selected ways way1 and way2. The function p can be selected among
+Returns a node property of the node `u` for cluster `C` and selected ways `way1` and `way2`. The function `p` can be selected among
 
 #### pDeg(MN,u,C,way1,way2)
-Degree of the node u.
+Degree of the node `V`.
 
 #### pSum(MN,u,C,way1,way2,weight=)
-Sum of weights of links in the node u.
+Sum of weights of links in the node `u`.
 
 #### pMax(MN,u,C,way1,way2,weight=)
-Maximum of weights of links in the node u.
+Maximum of weights of links in the node `u`.
 
 #### pRel(MN,u,C,way1,way2,way3=)
-Number of different realations of type way3 in the node u.
+Number of different realations of type `way3` in the node `u`.
 
 ### GenCoresDec(MN,way1,way2,way3=,weight=,p=)
-Generalized cores decomposition of the multiway network MN for the node property p.
+Generalized cores decomposition of the multiway network `MN` for the node property `p`.
 
 ```
 core <- GenCoresDec(MV,"SOURCE","TARGET",way3="LINKTYPE",p=pRel)
@@ -195,6 +195,17 @@ EU <- fromJSON("https://raw.githubusercontent.com/bavla/ibm3m/master/data/AirEu2
 core1 <- relCore(EU,"airA","airB","line")
 core2 <- GenCoresDec(EU,"airA","airB",way3="line",p=pRel)
 ```
+
+### Gen2modeCore(MN,way1,way2,f1,f2,t1,t2)
+
+Generalized two-mode cores of the multiway network `MN` for the node properties `f1` and `f2` at levels `t1` and `t2`.
+```
+PSum <- function(MN,u,C,way1,way2,...) pSum(MN,u,C,way1,way2,weight="w",...)
+cores <- Gen2modeCore(IS,"prov","univ",PSum,PSum,1500,1500)
+Cprov <- cores$core1; Cuniv <- cores$core2
+```
+
+
 
 ### mwn2net(MN,way1,way2,r=NULL,t=NULL,w=NULL,Net="Pajek.net",encoding="UTF-8")
 
