@@ -204,7 +204,7 @@ recodeway2part <- function(MN,way1,part,way2,desc){
 mwn2net <- function(MN,way1,way2,r=NULL,t=NULL,w=NULL,twomode=TRUE,Net="Pajek.net",encoding="UTF-8"){
   N <- MN$nodes; L <- MN$links; R <- NULL; T <- NULL
   U <- N[[way1]]$ID[L[[way1]]]; V <- N[[way2]]$ID[L[[way2]]]
-  if(is.null(w)) W <- rep(1,length(L[[u]])) else W <- L[[w]]
+  if(is.null(w)) W <- rep(1,length(L[[way1]])) else W <- L[[w]]
   if(!is.null(r)) R <- N[[r]]$ID[L[[r]]]
   if(!is.null(t)) T <- N[[t]]$ID[L[[t]]]
   uvrwt2net(U,V,w=W,r=R,t=T,Net=Net,twomode=twomode,encoding=encoding)
