@@ -1,6 +1,6 @@
 # Indirect block modeling of 3-mode data and analysis of multiway networks
 
-In 2006 we developed **ibm3m** an R package for indirect block modeling of 3-mode data. In november 2022 we started a more general approach to analysis of multiway networks. We developed a [JSON format](./multiway/structure.md) for description of multiway networks, collected some examples of multiway networks available on the WWW, and started development of the R package MWnets implementing methods for multiway network analysis.
+In 2006 we developed **ibm3m** an R package for indirect block modeling of 3-mode data. In november 2022 we started a more general approach to analysis of multiway networks. We developed a [JSON format](./multiway/structure.md) for description of multiway networks, collected some [examples](./data/README.md) of multiway networks available on the WWW, and started development of the R package [MWnets](./multiway/README.md) implementing methods for multiway network analysis.
 
 https://github.com/bavla/ibm3m/blob/master/multiway/structure.md
 
