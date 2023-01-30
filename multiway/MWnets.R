@@ -397,7 +397,7 @@ report2modeCore <- function(MN,way1,way2,f1,f2,cores,short=30,...){
     print(table(F1)); print(table(F2))}
 }
 
-Gen2modeCore <- function(MN,way1,way2,f1,f2,t1,t2){
+Gen2modeCore <- function(MN,way1,way2,f1,f2,t1,t2){ # way3=, weight=
 remove <- function(MN,Ha,Hb,waya,wayb,Ca,Cb,fb,ta,...){
   C <- c()
   while(size(Ha)>0) {
@@ -444,4 +444,20 @@ remove <- function(MN,Ha,Hb,waya,wayb,Ca,Cb,fb,ta,...){
 # core2 <- GenCoresDec(EU,"airA","airB",way3="line",p=pRel)
 # cores <- Gen2modeCore(MA,"an","pl",pDeg,pDeg,4,4)
 # report2modeCore(MA,"an","pl",pDeg,pDeg,cores)
+
+DF2MWN <- function(DF,ways,w=NULL,network="test",title="Test"){
+  info <- list(network=network,title=title,by="DF2MWN",date=date())
+  Ways <- as.list(ways); names(Ways) <- ways
+  data <- list()
+  nodes <- NULL; links <- data.frame(one=rep(1,nrow(CH)))
+  for(way in ways){
+    q <- factor(DF[[way]])
+    nodes[[way]] <- data.frame(ID=levels(q))
+    links[[way]] <- as.integer(q)
+  }
+  return(list(format="MWnets",info=info,ways=Ways,nodes=nodes,links=links,data=data)) 
+}
+
+# MT <- DF2MWN(CH,c("primary","location","arrest","domestic","ward","fbi"),
+#   network="ChicagoCrime22",title="City of Chicago incidents of crime 2022")
 
