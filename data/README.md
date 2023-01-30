@@ -1,5 +1,6 @@
 # Multiway network data sets
 
+http://vladowiki.fmf.uni-lj.si/doku.php?id=vlado:work:2m:mwn:chcr
 
 | Network | Columns |  Sizes | Structure |
 | :---         |     :---       |     :---       |      :---:   |
