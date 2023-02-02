@@ -1,6 +1,5 @@
 # Multiway network data sets
 
-http://vladowiki.fmf.uni-lj.si/doku.php?id=vlado:work:2m:mwn:chcr
 
 | Network | Columns |  Sizes | Structure |
 | :---         |     :---       |     :---       |      :---:   |
@@ -21,6 +20,7 @@ http://vladowiki.fmf.uni-lj.si/doku.php?id=vlado:work:2m:mwn:chcr
 | [Birds](https://github.com/bavla/ibm3m/raw/master/data/birds.zip)   | (V1, V2, type, w)      | collection 19 nets      | [str](https://github.com/bavla/ibm3m/blob/master/data/str/birds.md)     |
 | [tableware](https://raw.githubusercontent.com/bavla/ibm3m/master/data/tableware.json)   | (FROM, TO, TYPE, PERIOD, WEIGHT)      | (69, 69, 2, 3, 1590)      | [str](https://github.com/bavla/ibm3m/blob/master/data/str/tableware.md)     |
 | [Olympics](https://raw.githubusercontent.com/bavla/ibm3m/master/data/Olympics1.json)  | (Olympics, Country, Discipline, w)  | (9, 127, 41, 2843)   | [str](https://github.com/bavla/ibm3m/blob/master/data/str/Olympics1.md)  |
+| [Chicago crime](https://raw.githubusercontent.com/bavla/ibm3m/master/data/ChicagoCrime1.json)  | (Olympics, Country, Discipline, w)  | (9, 127, 41, 2843)   | [str](https://github.com/bavla/ibm3m/blob/master/data/str/ChicagoCrime1.md)  |
 | [AirEu2013](https://raw.githubusercontent.com/bavla/ibm3m/master/data/AirEu2013Ext.json)  | (airA, airB, line, w=1)  | (450, 450, 37, 7176)   | [str](https://github.com/bavla/ibm3m/blob/master/data/str/AirEu2013.md)  |
 | students  | (prov, univ, prog, year, w)      | (107, 79, 11, 4, 37205)       | [str](https://github.com/bavla/ibm3m/blob/master/data/str/students.md)      |
 
@@ -96,7 +96,10 @@ Each subject's data can be coded as a symmetric 15×15 binary (0,1) co-occurrenc
 
 S. Rosenberg and M. P. Kim (1975). The method of sorting as a data-gathering procedure
     in multivariate research. Multivariate Behavioral Research, 10, 489–502.
-    
+## Chicago crime
+
+http://vladowiki.fmf.uni-lj.si/doku.php?id=vlado:work:2m:mwn:chcr
+
 ## European airlines 2013
 
 [AirEu2013](https://raw.githubusercontent.com/bavla/ibm3m/master/data/AirEu2013.json)
