@@ -20,6 +20,7 @@ http://vladowiki.fmf.uni-lj.si/doku.php?id=vlado:work:2m:mwn:chcr
 | [Kinship](https://raw.githubusercontent.com/bavla/ibm3m/master/data/kinship.json)   | (T1, T2, K, w)      | (15, 15, 6, 1350)      | [str](https://github.com/bavla/ibm3m/blob/master/data/str/kinship.md)     |
 | [Birds](https://github.com/bavla/ibm3m/raw/master/data/birds.zip)   | (V1, V2, type, w)      | collection 19 nets      | [str](https://github.com/bavla/ibm3m/blob/master/data/str/birds.md)     |
 | [tableware](https://raw.githubusercontent.com/bavla/ibm3m/master/data/tableware.json)   | (FROM, TO, TYPE, PERIOD, WEIGHT)      | (69, 69, 2, 3, 1590)      | [str](https://github.com/bavla/ibm3m/blob/master/data/str/tableware.md)     |
+| [Olympics](https://raw.githubusercontent.com/bavla/ibm3m/master/data/Olympics1.json)  | (Olympics, Country, Discipline, w)  | (9, 127, 41, 2843)   | [str](https://github.com/bavla/ibm3m/blob/master/data/str/Olympics1.md)  |
 | [AirEu2013](https://raw.githubusercontent.com/bavla/ibm3m/master/data/AirEu2013Ext.json)  | (airA, airB, line, w=1)  | (450, 450, 37, 7176)   | [str](https://github.com/bavla/ibm3m/blob/master/data/str/AirEu2013.md)  |
 | students  | (prov, univ, prog, year, w)      | (107, 79, 11, 4, 37205)       | [str](https://github.com/bavla/ibm3m/blob/master/data/str/students.md)      |
 
