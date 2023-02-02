@@ -1,6 +1,6 @@
 # Olympics 1
 
-Derived from Olympics0
+Derived from [Olympics0](https://raw.githubusercontent.com/bavla/ibm3m/master/data/Olympics0.json)
 
 ```
 List of 6
