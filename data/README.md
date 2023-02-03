@@ -15,7 +15,7 @@
 | [marmello77](https://raw.githubusercontent.com/bavla/ibm3m/master/data/marmello77.json)   | (an, pl, R, w)      | (9, 34, 2, 72)      | [str](https://github.com/bavla/ibm3m/blob/master/data/str/marmello77.md)     |
 | [CSaarhus](https://raw.githubusercontent.com/bavla/ibm3m/master/data/CSaarhus.json)   | (P1, P2, R, w=1)      | (61, 61, 5, 620)      | [str](https://github.com/bavla/ibm3m/blob/master/data/str/CSaarhus.md)     |
 | [Vickers](https://raw.githubusercontent.com/bavla/ibm3m/master/data/Vickers.json)   | (S1, S1, R, w=1)      | (29, 29, 3, 740)      | [str](https://github.com/bavla/ibm3m/blob/master/data/str/vickers.md)     |
-| [Students](https://raw.githubusercontent.com/bavla/ibm3m/master/data/Students.json)   | (S1, S1, R, w=1)      | (185, 185, 3, 360)      | [str](https://github.com/bavla/ibm3m/blob/master/data/str/studentsCSN.md)     |
+| [Students CSN](https://raw.githubusercontent.com/bavla/ibm3m/master/data/Students.json)   | (S1, S1, R, w=1)      | (185, 185, 3, 360)      | [str](https://github.com/bavla/ibm3m/blob/master/data/str/studentsCSN.md)     |
 | [Polit](https://raw.githubusercontent.com/bavla/ibm3m/master/data/polit.json)   | (P1, P2, S, w)      | (12, 12, 2, 288)      | [str](https://github.com/bavla/ibm3m/blob/master/data/str/polit.md)     |
 | [Kinship](https://raw.githubusercontent.com/bavla/ibm3m/master/data/kinship.json)   | (T1, T2, K, w)      | (15, 15, 6, 1350)      | [str](https://github.com/bavla/ibm3m/blob/master/data/str/kinship.md)     |
 | [Birds](https://github.com/bavla/ibm3m/raw/master/data/birds.zip)   | (V1, V2, type, w)      | collection 19 nets      | [str](https://github.com/bavla/ibm3m/blob/master/data/str/birds.md)     |
