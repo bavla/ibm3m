@@ -30,3 +30,7 @@ List of 6
   ..$ w       : num [1:18598] 20 1 1 1 1 12 8 22 2 2 ...
  $ data  : list()
 ```
+
+ Chicago crime
+
+http://vladowiki.fmf.uni-lj.si/doku.php?id=vlado:work:2m:mwn:chcr
