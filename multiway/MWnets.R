@@ -449,7 +449,7 @@ DF2MWN <- function(DF,ways,w=NULL,network="test",title="Test"){
   info <- list(network=network,title=title,by="DF2MWN",date=date())
   Ways <- as.list(ways); names(Ways) <- ways
   data <- list()
-  nodes <- NULL; links <- data.frame(one=rep(1,nrow(CH)))
+  nodes <- NULL; links <- data.frame(one=rep(1,nrow(DF)))
   for(way in ways){
     q <- factor(DF[[way]])
     nodes[[way]] <- data.frame(ID=levels(q))
