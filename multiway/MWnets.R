@@ -455,6 +455,7 @@ DF2MWN <- function(DF,ways,w=NULL,network="test",title="Test"){
     nodes[[way]] <- data.frame(ID=levels(q))
     links[[way]] <- as.integer(q)
   }
+  for(way in w) links[[way]] <-DF[[way]]
   return(list(format="MWnets",info=info,ways=Ways,nodes=nodes,links=links,data=data)) 
 }
 
