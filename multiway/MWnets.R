@@ -333,7 +333,8 @@ extract <- function(MN,ways,clus){
   info$trace[[length(info$trace)+1]] <- event
   OK <- rep(TRUE,nrow(MN$links))
   for(i in 1:length(ways)){ clu <- eval(str2expression(clus[i]))
-    N[[ways[i]]] <- N[[ways[i]]][clu,]
+    N[[ways[i]]] <- T <- N[[ways[i]]][clu,]
+    if(typeof(T)=="character") N[[ways[i]]] <- data.frame(ID=as.vector(T))
     L[[ways[i]]] <- as.integer(factor(L[[ways[i]]],levels=clu))
     OK <- OK & !is.na(L[[ways[i]]])
   }
@@ -341,6 +342,7 @@ extract <- function(MN,ways,clus){
     nodes=N,links=L[OK,],data=MN$data)
   return(Sc)
 }
+
 
 # Score <- extract(S10,c("prov","univ"),c("w1","w2"))
 
