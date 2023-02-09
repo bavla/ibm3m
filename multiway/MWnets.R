@@ -464,7 +464,7 @@ DF2MWN <- function(DF,ways,w=NULL,network="test",title="Test"){
 # MT <- DF2MWN(CH,c("primary","location","arrest","domestic","ward","fbi"),
 #   network="ChicagoCrime22",title="City of Chicago incidents of crime 2022")
 
-pCnt <- function(MN,v,cip,C,...){ 
+pCnt <- function(MN,v,cip,C){ 
   OK <- function(e){
     for(j in 2:length(cip)){
       r <- cip[j]; z <- ci[r]
@@ -478,7 +478,7 @@ pCnt <- function(MN,v,cip,C,...){
   return(cnt)
 }
 
-pWsum <- function(MN,v,cip,C,weight=w){ # ci=ci,cip=cip,C=C
+pWsum <- function(MN,v,cip,C,weight="w"){ # ci=ci,cip=cip,C=C
   OK <- function(e){
     for(j in 2:length(cip)){
       r <- cip[j]; z <- ci[r]
@@ -491,6 +491,46 @@ pWsum <- function(MN,v,cip,C,weight=w){ # ci=ci,cip=cip,C=C
   for(e in I) if(OK(e)) s <- s + MN$links[e,weight]
   return(s)
 }
+
+pWmax <- function(MN,v,cip,C,weight="w"){ 
+  OK <- function(e){
+    for(j in 2:length(cip)){
+      r <- cip[j]; z <- ci[r]
+      if(!(MN$links[e,z] %in% C[[r]])) return(FALSE)
+    }
+    return(TRUE)
+  } 
+  I <- which(MN$links[[ci[cip[1]]]]==v)
+  s <- 0
+  for(e in I) if(OK(e)) s <- max(s, MN$links[e,weight])
+  return(s)
+}
+
+pDiv <- function(MN,v,cip,C,way=NULL){ 
+  OK <- function(e){
+    for(j in 2:length(cip)){
+      r <- cip[j]; z <- ci[r]
+      if(!(MN$links[e,z] %in% C[[r]])) return(FALSE)
+    }
+    return(TRUE)
+  } 
+  I <- which(MN$links[[ci[cip[1]]]]==v)
+  return(length(union(NULL,MN$links[[rel]][I[sapply(I,OK)]])))
+}
+
+pAttr <- function(MN,v,cip,C,way=NULL,attr=NULL,FUN=sum){ 
+  OK <- function(e){
+    for(j in 2:length(cip)){
+      r <- cip[j]; z <- ci[r]
+      if(!(MN$links[e,z] %in% C[[r]])) return(FALSE)
+    }
+    return(TRUE)
+  } 
+  I <- which(MN$links[[ci[cip[1]]]]==v)
+  U <- union(NULL,MN$links[[way]][I[sapply(I,OK)]])
+  return(FUN(MN$nodes[[way]][[attr]][U]))
+}
+
 
 MWcore <- function(MN,P,cw,trace=FALSE){
   C <- sapply(cw, \(x) 1:nrow(MN$nodes[[x]]))
