@@ -464,3 +464,63 @@ DF2MWN <- function(DF,ways,w=NULL,network="test",title="Test"){
 # MT <- DF2MWN(CH,c("primary","location","arrest","domestic","ward","fbi"),
 #   network="ChicagoCrime22",title="City of Chicago incidents of crime 2022")
 
+pCnt <- function(MN,v,cip,C,...){ 
+  OK <- function(e){
+    for(j in 2:length(cip)){
+      r <- cip[j]; z <- ci[r]
+      if(!(MN$links[e,z] %in% C[[r]])) return(FALSE)
+    }
+    return(TRUE)
+  } 
+  I <- which(MN$links[[ci[cip[1]]]]==v)
+  cnt <- 0
+  for(e in I) if(OK(e)) cnt <- cnt+1
+  return(cnt)
+}
+
+pWsum <- function(MN,v,cip,C,weight=w){ # ci=ci,cip=cip,C=C
+  OK <- function(e){
+    for(j in 2:length(cip)){
+      r <- cip[j]; z <- ci[r]
+      if(!(MN$links[e,z] %in% C[[r]])) return(FALSE)
+    }
+    return(TRUE)
+  } 
+  I <- which(MN$links[[ci[cip[1]]]]==v)
+  s <- 0
+  for(e in I) if(OK(e)) s <- s + MN$links[e,weight]
+  return(s)
+}
+
+MWcore <- function(MN,P,cw,trace=FALSE){
+  C <- sapply(cw, \(x) 1:nrow(MN$nodes[[x]]))
+  repeat{
+    exit <- TRUE
+    for(w in 1:length(P)){
+      cip <- P[[w]]$cip; p <- P[[w]]$p; thresh <- P[[w]]$t
+      R <- c(); r <- cip[1]
+      for(v in C[[r]]) {
+        pv <- p(MN,v,cip,C)
+        if(pv < thresh) {R <- union(R,v); exit <- FALSE}
+      }
+      C[[r]] <- setdiff(C[[r]],R)
+      if(trace) cat(w,P[[w]]$cwp[1],r,":",cip,"/",thresh,"\n",R,"\n")
+    }
+    if(exit) break
+  }
+  return(C)
+}
+
+listCore <- function(MN,C,P,sorted=TRUE){
+  for(w in 1:length(P)){
+    cip <- P[[w]]$cip; p <- P[[w]]$p
+    nw <- nrow(MN$nodes[[P[[w]]$cwp[1]]])
+    r <- cip[1]; core <- list(); N <- MN$nodes[[P[[w]]$cwp[1]]]$ID
+    for(v in 1:nw) if(v %in% C[[r]]) core[[N[v]]] <- p(MN,v,cip,C)
+    cat(w,P[[w]]$cwp[1],":",thresh, nw, cip,"\n")
+    T <- unlist(core,use.name=TRUE); if(sorted) T <- rev(sort(T))
+    print(T)
+  }
+}
+
+                 
