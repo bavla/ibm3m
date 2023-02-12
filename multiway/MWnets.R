@@ -515,7 +515,7 @@ pDiv <- function(MN,v,cip,C,way=NULL){
     return(TRUE)
   } 
   I <- which(MN$links[[ci[cip[1]]]]==v)
-  return(length(union(NULL,MN$links[[way]][I[sapply(I,OK)]])))
+  return(length(union(NULL,MN$links[[way]][I[unlist(sapply(I,OK))]])))
 }
 
 pAttr <- function(MN,v,cip,C,way=NULL,attr=NULL,FUN=sum){ 
@@ -527,50 +527,42 @@ pAttr <- function(MN,v,cip,C,way=NULL,attr=NULL,FUN=sum){
     return(TRUE)
   } 
   I <- which(MN$links[[ci[cip[1]]]]==v)
-  U <- union(NULL,MN$links[[way]][I[sapply(I,OK)]])
+  U <- union(NULL,MN$links[[way]][I[unlist(sapply(I,OK))]])
   return(FUN(MN$nodes[[way]][[attr]][U]))
 }
 
 
-MWcore <- function(MN,P,cw,trace=FALSE){
-  C <- sapply(cw, \(x) 1:nrow(MN$nodes[[x]]))
+MWcore <- function(MN,P,trace=FALSE){
+  C <- lapply(P$cways$cw, \(x) 1:nrow(MN$nodes[[x]])); names(C) <- P$cways$cw
   repeat{
     exit <- TRUE
-    for(w in 1:length(P)){
-      cip <- P[[w]]$cip; p <- P[[w]]$p; thresh <- P[[w]]$t
+    for(i in 1:(length(P)-1)){
+      cip <- P[[i]]$cip; p <- P[[i]]$p; thresh <- P[[i]]$t
       R <- c(); r <- cip[1]
       for(v in C[[r]]) {
         pv <- p(MN,v,cip,C)
         if(pv < thresh) {R <- union(R,v); exit <- FALSE}
       }
-      C[[r]] <- setdiff(C[[r]],R)
-      if(trace) cat(w,P[[w]]$cwp[1],r,":",cip,"/",thresh,"\n",R,"\n")
+      if(length(R)>0) C[[r]] <- setdiff(C[[r]],R)
+      if(trace) cat(i,P[[i]]$cwp[1],r,":",cip,"/",thresh,"\n",R,"\n")
     }
     if(exit) break
   }
   return(C)
 }
 
-listCoreOld <- function(MN,C,P,sorted=TRUE){
-  for(w in 1:length(P)){
-    cip <- P[[w]]$cip; p <- P[[w]]$p
-    nw <- nrow(MN$nodes[[P[[w]]$cwp[1]]])
-    r <- cip[1]; core <- list(); N <- MN$nodes[[P[[w]]$cwp[1]]]$ID
+listCore <- function(MN,C,P,sorted=TRUE){
+  ci <- P[["cways"]]$ci
+  for(i in 1:(length(P)-1)){
+    cip <- P[[i]]$cip; p <- P[[i]]$p; thresh <- P[[i]]$t
+    iu <- P[[i]]$cwp[1]; N <- MN$nodes[[iu]]$ID
+    nw <- length(N); r <- cip[1]; core <- list(); 
     for(v in 1:nw) if(v %in% C[[r]]) core[[N[v]]] <- p(MN,v,cip,C)
-    cat(w,P[[w]]$cwp[1],":",thresh, nw, cip,"\n")
+    cat(i,iu,":",thresh, nw, cip,"\n")
     T <- unlist(core,use.name=TRUE); if(sorted) T <- rev(sort(T))
     print(T)
   }
 }
 
-listCore <- function(MN,C,P){
-  for(i in 1:length(P)){
-    cip <- P[[i]]$cip; p <- P[[i]]$p; thresh <- P[[i]]$t
-    nw <- nrow(MN$nodes[[P[[i]]$cwp[1]]]); T <- rep(0,nw)
-    r <- cip[1]; core <- list(); N <- MN$nodes[[cw[i]]]$ID
-    for(v in 1:nw) if(v %in% C[[r]]) core[[N[v]]] <- p(MN,v,cip,C)
-    cat(i,P[[i]]$cwp[1],":",thresh, nw, cip,"\n")
-    print(unlist(core,use.name=TRUE))
-  }
-}
+
                  
