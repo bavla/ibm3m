@@ -551,7 +551,7 @@ MWcore <- function(MN,P,cw,trace=FALSE){
   return(C)
 }
 
-listCore <- function(MN,C,P,sorted=TRUE){
+listCoreOld <- function(MN,C,P,sorted=TRUE){
   for(w in 1:length(P)){
     cip <- P[[w]]$cip; p <- P[[w]]$p
     nw <- nrow(MN$nodes[[P[[w]]$cwp[1]]])
@@ -563,4 +563,14 @@ listCore <- function(MN,C,P,sorted=TRUE){
   }
 }
 
+listCore <- function(MN,C,P){
+  for(i in 1:length(P)){
+    cip <- P[[i]]$cip; p <- P[[i]]$p; thresh <- P[[i]]$t
+    nw <- nrow(MN$nodes[[P[[i]]$cwp[1]]]); T <- rep(0,nw)
+    r <- cip[1]; core <- list(); N <- MN$nodes[[cw[i]]]$ID
+    for(v in 1:nw) if(v %in% C[[r]]) core[[N[v]]] <- p(MN,v,cip,C)
+    cat(i,P[[i]]$cwp[1],":",thresh, nw, cip,"\n")
+    print(unlist(core,use.name=TRUE))
+  }
+}
                  
