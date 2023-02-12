@@ -515,7 +515,7 @@ pDiv <- function(MN,v,cip,C,way=NULL){
     return(TRUE)
   } 
   I <- which(MN$links[[ci[cip[1]]]]==v)
-  return(length(union(NULL,MN$links[[rel]][I[sapply(I,OK)]])))
+  return(length(union(NULL,MN$links[[way]][I[sapply(I,OK)]])))
 }
 
 pAttr <- function(MN,v,cip,C,way=NULL,attr=NULL,FUN=sum){ 
