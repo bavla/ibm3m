@@ -3,8 +3,6 @@
 # https://github.com/bavla/ibm3m/tree/master/multiway
 # source("https://raw.githubusercontent.com/bavla/ibm3m/master/multiway/MWnets.R")
 
-library(datastructures)
-
 inv <- function(p){q <- p; q[p] <- 1:length(p); return(q)}
 
 reorderways <- function(MN,ord){
