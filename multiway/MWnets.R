@@ -421,5 +421,18 @@ listCore <- function(MN,C,P,sorted=TRUE){
   }
 }
 
+percents <- function(MN,MT,way1,way2,way3,weight){
+  St <- sum(MN$links[[weight]]); Sc <- sum(MT$links[[weight]])
+  cat("weights: ",Sc,"/",St,"=",Sc/St,"\n")
+  cat("links: ",nrow(MT$links),"/",nrow(MN$links),"=",nrow(MT$links)/nrow(MN$links),"\n")
+  NT <- MT$nodes; NN <- MN$nodes
+  cat("space: (",nrow(NT[[way1]]),"*",nrow(NT[[way2]]),"*",nrow(NT[[way3]]),")/(",
+    nrow(NN[[way1]]),"*",nrow(NN[[way2]]),"*",nrow(NN[[way3]]),") =",
+    (nrow(NT[[way1]])*nrow(NT[[way2]])*nrow(NT[[way3]]))/
+    (nrow(NN[[way1]])*nrow(NN[[way2]])*nrow(NN[[way3]])),"\n")
+}
 
+# percents(MN,Rcore,"airA","airB","line","w")
+      
+      
                  
