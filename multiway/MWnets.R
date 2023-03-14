@@ -1,7 +1,9 @@
 # MWnets 0.0
 # by Vladimir Batagelj, November 2022
+# version: March 14, 2023
 # https://github.com/bavla/ibm3m/tree/master/multiway
 # source("https://raw.githubusercontent.com/bavla/ibm3m/master/multiway/MWnets.R")
+# ------------------------------------------------------------------
 
 inv <- function(p){q <- p; q[p] <- 1:length(p); return(q)}
 
@@ -84,6 +86,17 @@ joinways <- function(MN,way1,way2,way3,sep="#"){
 }
 
 # Mj <- joinways(MN,"prog","univ","prun")
+
+linkcut <- function(MN,P){
+  MT <- MN
+  MT$links <- with(MN$links,MN$links[eval(str2expression(P)),])
+  event <- list(op="linkcut",P=P,date=date())
+  MT$info$trace[[length(MT$info$trace)+1]] <- event
+  return(MT)
+}
+
+# MN %>% flatten("w",c("prov","univ","prog")) -> Sall
+# MT <- linkcut(Sall,"w>=30")
 
 projection <- function(MN,way,w){
   Nw <- names(MN$ways); u <- which(Nw==way)
