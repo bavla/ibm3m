@@ -29,4 +29,4 @@ The file tests.R contains example blockmodelings (random, Krackard, Lazega).
 
 The 3-mode networks can be prepared in
 - UCINET DL matrix format; see file krack.dat
-- as triplets: see files test.tri and triplet.dat
+- as triplets: see files test.tri and [triplet.dat](https://github.com/bavla/ibm3m/blob/master/data/triplet.dat)
