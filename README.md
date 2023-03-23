@@ -9,7 +9,7 @@ In november 2022 we started a more general approach to analysis of multiway netw
 ibm3m - indirect block modeling of 3-mode data
 
 The first version was developed in 2006 by Vladimir Batagelj, University of Ljubljana, Slovenia (Bled, July 15-17, 2006
-and Ljubljana, July 18-21, 2006). The package was described in the [[https://github.com/bavla/ibm3m/blob/master/3-wayBM.pdf|paper]]  
+and Ljubljana, July 18-21, 2006). The package was described in the [paper](https://github.com/bavla/ibm3m/blob/master/3-wayBM.pdf)  
 
 Batagelj, V., Ferligoj, A., Doreian, P.: Indirect Blockmodeling of 3-Way Networks. In: Selected Contributions in Data Analysis and Classification, Springer, 2007, pp.151-159.
 
@@ -29,4 +29,4 @@ The file tests.R contains example blockmodelings (random, Krackard, Lazega).
 
 The 3-mode networks can be prepared in
 - UCINET DL matrix format; see file krack.dat
-- as triplets: see files test.tri and [triplet.dat](https://github.com/bavla/ibm3m/blob/master/data/triplet.dat)
+- as triplets: see files [test.tri](https://github.com/bavla/ibm3m/blob/master/data/test.tri) and [triplet.dat](https://github.com/bavla/ibm3m/blob/master/data/triplet.dat)
