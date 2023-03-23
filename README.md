@@ -15,15 +15,15 @@ Batagelj, V., Ferligoj, A., Doreian, P.: Indirect Blockmodeling of 3-Way Network
 
 The file ibm3m.R contains the following functions
 
-dist3m(a,t,d)
+- dist3m(a,t,d)
 
-rndMat3m(m,n,p=0.3)
+- rndMat3m(m,n,p=0.3)
 
-readDL3m(f,...)
+- readDL3m(f,...)
 
-kin3m(fkin,tit,a,px,py,pz,rad=0.3)
+- kin3m(fkin,tit,a,px,py,pz,rad=0.3)
 
-saveTriplets3m(f,a,head=TRUE,tit="ibm3m",lsep=":")
+- saveTriplets3m(f,a,head=TRUE,tit="ibm3m",lsep=":")
 
 The file tests.R contains example blockmodelings (random, Krackard, Lazega).
 
