@@ -9,7 +9,7 @@ In november 2022 we started a more general approach to analysis of multiway netw
 ibm3m - indirect block modeling of 3-mode data
 
 The first version was developed in 2006 by Vladimir Batagelj, University of Ljubljana, Slovenia (Bled, July 15-17, 2006
-and Ljubljana, July 18-21, 2006). The package was described in the paper (see the file 3-wayBM.pdf) 
+and Ljubljana, July 18-21, 2006). The package was described in the [[https://github.com/bavla/ibm3m/blob/master/3-wayBM.pdf|paper]]  
 
 Batagelj, V., Ferligoj, A., Doreian, P.: Indirect Blockmodeling of 3-Way Networks. In: Selected Contributions in Data Analysis and Classification, Springer, 2007, pp.151-159.
 
