@@ -1,6 +1,6 @@
 # MWnets 0.0
 # by Vladimir Batagelj, November 2022
-# version: March 14, 2023
+# version: April 2, 2023
 # https://github.com/bavla/ibm3m/tree/master/multiway
 # source("https://raw.githubusercontent.com/bavla/ibm3m/master/multiway/MWnets.R")
 # ------------------------------------------------------------------
@@ -212,9 +212,9 @@ recodeway2part <- function(MN,way1,part,way2,desc){
 # Mr <- recodeway2part(MN,"prov","IDreg","regs","region")
 # Mre <- flatten(Mr,"w",c("regs","univ","prog","year"))
 
-mwn2net <- function(MN,way1,way2,r=NULL,t=NULL,w=NULL,twomode=TRUE,Net="Pajek.net",encoding="UTF-8"){
+mwn2net <- function(MN,way1,way2,ID1="ID",ID2="ID",r=NULL,t=NULL,w=NULL,twomode=TRUE,Net="Pajek.net",encoding="UTF-8"){
   N <- MN$nodes; L <- MN$links; R <- NULL; T <- NULL
-  U <- N[[way1]]$ID[L[[way1]]]; V <- N[[way2]]$ID[L[[way2]]]
+  U <- N[[way1]][[ID1]][L[[way1]]]; V <- N[[way2]][[ID2]][L[[way2]]]
   if(is.null(w)) W <- rep(1,length(L[[way1]])) else W <- L[[w]]
   if(!is.null(r)) R <- N[[r]]$ID[L[[r]]]
   if(!is.null(t)) T <- N[[t]]$ID[L[[t]]]
@@ -222,6 +222,7 @@ mwn2net <- function(MN,way1,way2,r=NULL,t=NULL,w=NULL,twomode=TRUE,Net="Pajek.ne
 }
 
 # mwn2net(S2014,"prov","univ",r="prog",w="w",Net="S2014.net")
+# mwn2net(Net,"airA","airB",ID1="long",ID2="long",w="w",twomode=FALSE,Net="lines.net")
 
 mwn2clu <- function(MN,way,part,Clu="Pajek.clu",encoding="UTF-8"){
   C <- MN$nodes[[way]][[part]]; n <- length(C); clu <- file(Clu,"w")
