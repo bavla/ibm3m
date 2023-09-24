@@ -1,7 +1,6 @@
 # Roethlisberger & Dickson Bank Wiring Room
 
-
-> str(MN)
+```
 List of 6
  $ format: chr "MWnets"
  $ info  :List of 7
@@ -29,4 +28,5 @@ List of 6
   ..$ R : int [1:189] 1 1 1 1 1 1 1 1 1 1 ...
   ..$ w : int [1:189] 1 1 1 1 1 1 1 1 1 1 ...
  $ data  : list()
+```
 
