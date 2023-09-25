@@ -9,8 +9,8 @@
 
 ## 3D layouts
 
--[All EU airports](http://vladowiki.fmf.uni-lj.si/doku.php?id=vlado:work:2m:mwn:x3d:airports)
--[Airports core - initial](http://vladowiki.fmf.uni-lj.si/doku.php?id=vlado:work:2m:mwn:x3d:aircore)
--[Airports core - reordered](http://vladowiki.fmf.uni-lj.si/doku.php?id=vlado:work:2m:mwn:x3d:aircoref)
--[Olympics 2016 - core](http://vladowiki.fmf.uni-lj.si/doku.php?id=vlado:work:2m:mwn:x3d:ol16clore)
+- [All EU airports](http://vladowiki.fmf.uni-lj.si/doku.php?id=vlado:work:2m:mwn:x3d:airports)
+- [Airports core - initial](http://vladowiki.fmf.uni-lj.si/doku.php?id=vlado:work:2m:mwn:x3d:aircore)
+- [Airports core - reordered](http://vladowiki.fmf.uni-lj.si/doku.php?id=vlado:work:2m:mwn:x3d:aircoref)
+- [Olympics 2016 - core](http://vladowiki.fmf.uni-lj.si/doku.php?id=vlado:work:2m:mwn:x3d:ol16clore)
 
