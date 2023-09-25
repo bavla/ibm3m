@@ -6,3 +6,11 @@
 - [HiTEc 2023 - talk](https://github.com/bavla/ibm3m/raw/master/docs/airportsHiTEc.pdf)
 - [HiTEc 2023 - course](https://github.com/bavla/ibm3m/blob/master/docs/multiwayHiTEc.pdf)
 - [V.B.: Cores in multiway networks / arXiv](https://arxiv.org/abs/2303.14313)
+
+## 3D layouts
+
+-[All EU airports](http://vladowiki.fmf.uni-lj.si/doku.php?id=vlado:work:2m:mwn:x3d:airports)
+-[Airports core - initial](http://vladowiki.fmf.uni-lj.si/doku.php?id=vlado:work:2m:mwn:x3d:aircore)
+-[Airports core - reordered](http://vladowiki.fmf.uni-lj.si/doku.php?id=vlado:work:2m:mwn:x3d:aircoref)
+-[Olympics 2016 - core](http://vladowiki.fmf.uni-lj.si/doku.php?id=vlado:work:2m:mwn:x3d:ol16clore)
+
