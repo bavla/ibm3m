@@ -2,7 +2,7 @@
 
 In 2006 we developed **ibm3m** an R package for indirect block modeling of 3-mode data. 
 
-In november 2022 we started a more general approach to analysis of multiway networks. We developed a [JSON format](./multiway/structure.md) for description of multiway networks, collected some [examples](./data/README.md) of multiway networks available on the WWW, and started development of the R package [MWnets](./multiway/README.md) implementing methods for multiway network analysis. The advances in the development were reported at the [Sredin seminar](./docs).
+In november 2022 we started a more general approach to analysis of multiway networks. We developed a [JSON format](./multiway/structure.md) for description of multiway networks, collected some [examples](./data/README.md) of multiway networks available on the WWW, and started development of the R package [MWnets](./multiway/README.md) implementing methods for multiway network analysis. The advances in the development were reported at the [Sredin seminar](./docs). The details on the analysis of the European airports are available on [VladoWiki](http://vladowiki.fmf.uni-lj.si/doku.php?id=vlado:work:2m:mwn:x3d:aircore).
 
 
 ## ibm3m
