@@ -1,6 +1,6 @@
 # MWnets 0.0
 # by Vladimir Batagelj, November 2022
-# version: April 2, 2023
+# version: March 14, 2023
 # https://github.com/bavla/ibm3m/tree/master/multiway
 # source("https://raw.githubusercontent.com/bavla/ibm3m/master/multiway/MWnets.R")
 # ------------------------------------------------------------------
@@ -99,14 +99,16 @@ linkcut <- function(MN,P){
 # MT <- linkcut(Sall,"w>=30")
 
 projection <- function(MN,way,w){
-  Nw <- names(MN$ways); u <- which(Nw==way)
-  nw <- length(MN$ways); nc <- ncol(MN$links)
-  Nc <- names(MN$links); v <- which(Nc==w)
-  S <- c((1:nw)[-u],u,v)
-  MT <- MN$links[S]; Nt <- names(MT)[1:nw]
+  Nc <- names(MN$links); nw <- length(MN$ways); nc <- ncol(MN$links)
+  S <- c(setdiff(Nc,c(way,w)),way,w); sel <- match(S,Nc)
+  MT <- MN$links[sel]; Sw <- S[1:nw]
+  L <- as.list(Sw); names(L) <- Sw
+  for(c in Sw) L[[c]] <- MT[[c]]
+  NT <- aggregate(MT[[w]], by=L, FUN=sum)
+  colnames(NT) <- S
   ex <- paste("order(",paste(Nt,collapse=","),")",sep="")
-  per <- with(MT,eval(str2expression(ex)))
-  MP <- MT[per,]
+  per <- with(NT,eval(str2expression(ex)))
+  MP <- NT[per,]
   I <- c(1); nm <- nw-1; nS <- length(MN$nodes[[way]]$ID)
   for(i in 2:nrow(MP)) if(!all(MP[i-1,1:nm]==MP[i,1:nm])) I <- c(I,i)
   I <- c(I,nrow(MP)+1)
@@ -131,9 +133,21 @@ projection <- function(MN,way,w){
 
 salton <- function(Co){
   Sal <- Co; diag(Sal) <- 1; n = nrow(Sal)
-  for(u in 1:(n-1)) for(v in (u+1):n) Sal[v,u] <- Sal[u,v] <- Co[u,v]/sqrt(Co[u,u]*Co[v,v])
+  for(u in 1:(n-1)) for(v in (u+1):n) Sal[v,u] <- Sal[u,v] <- 
+    ifelse(Co[u,v]>0,Co[u,v]/sqrt(Co[u,u]*Co[v,v]),0)
   return(Sal)
 }
+
+jaccard <- function(Co){
+  Jac <- Co; diag(Jac) <- 1; n = nrow(Jac)
+  for(u in 1:(n-1)) for(v in (u+1):n) Jac[v,u] <- Jac[u,v] <- 
+    ifelse(Co[u,v]>0,Co[u,v]/(Co[u,u]+Co[v,v]-Co[u,v]),0)
+  return(Jac)
+}
+
+# D <- as.dist(1-salton(projection(MM,"cntry","one")))
+# t <- hclust(D,method="ward.D2")
+# plot(t,hang=-1,cex=0.9,main="ESS media / countries")
 
 projection2 <- function(MN,way,w,z){
   Nw <- names(MN$ways); u <- which(Nw==way)
@@ -212,9 +226,9 @@ recodeway2part <- function(MN,way1,part,way2,desc){
 # Mr <- recodeway2part(MN,"prov","IDreg","regs","region")
 # Mre <- flatten(Mr,"w",c("regs","univ","prog","year"))
 
-mwn2net <- function(MN,way1,way2,ID1="ID",ID2="ID",r=NULL,t=NULL,w=NULL,twomode=TRUE,Net="Pajek.net",encoding="UTF-8"){
+mwn2net <- function(MN,way1,way2,r=NULL,t=NULL,w=NULL,twomode=TRUE,Net="Pajek.net",encoding="UTF-8"){
   N <- MN$nodes; L <- MN$links; R <- NULL; T <- NULL
-  U <- N[[way1]][[ID1]][L[[way1]]]; V <- N[[way2]][[ID2]][L[[way2]]]
+  U <- N[[way1]]$ID[L[[way1]]]; V <- N[[way2]]$ID[L[[way2]]]
   if(is.null(w)) W <- rep(1,length(L[[way1]])) else W <- L[[w]]
   if(!is.null(r)) R <- N[[r]]$ID[L[[r]]]
   if(!is.null(t)) T <- N[[t]]$ID[L[[t]]]
@@ -222,7 +236,6 @@ mwn2net <- function(MN,way1,way2,ID1="ID",ID2="ID",r=NULL,t=NULL,w=NULL,twomode=
 }
 
 # mwn2net(S2014,"prov","univ",r="prog",w="w",Net="S2014.net")
-# mwn2net(Net,"airA","airB",ID1="long",ID2="long",w="w",twomode=FALSE,Net="lines.net")
 
 mwn2clu <- function(MN,way,part,Clu="Pajek.clu",encoding="UTF-8"){
   C <- MN$nodes[[way]][[part]]; n <- length(C); clu <- file(Clu,"w")
