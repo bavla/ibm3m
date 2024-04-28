@@ -25,6 +25,11 @@ clusterNames <- function(L,sep="+"){
   return(N)
 }
 
+subscripts <- function(A,ia){
+  ia <- ia - 1; d <- dim(A); nd <- length(d);  idx <- rep(0,nd)
+  for(s in 1:nd){idx[s] <- 1 + ia %% d[s]; ia <- ia %/% d[s]}
+  return(idx)
+}
 
 reorderways <- function(MN,ord){
   Cols <- colnames(MN$links); info <- MN$info
@@ -524,5 +529,39 @@ percents <- function(MN,MT,way1,way2,way3,weight){
 
 # percents(MN,Rcore,"airA","airB","line","w")
       
-      
+clingsReport <- function(MN,P,nc){
+  E <- MN$links; n <- nrow(E)
+  CD <- unname(sapply(P,length))
+  CS <- lapply(P,function(x) unname(table(x))) 
+  TN <- lapply(P,function(x) clusterNames(namesInClusters(x)))
+  dimC <- sapply(CS,length)
+  TC <- array(0,dim=dimC)
+  Nw <- names(P); nw <- length(Nw)
+  Ni <- match(Nw,colnames(E)); J <- rep(0,nw)
+  for(i in 1:n){
+    e <- E[i,]
+    In <- unlist(sapply(Ni,function(j) e[j]))
+    for(j in 1:nw) J[j] <- P[[Nw[j]]][In[j]] 
+    TCs <- paste("TC[",paste(J,collapse=","),"]",sep="")
+    Cnt <- paste(TCs," <- ",TCs," + 1",sep="")
+    temp <- eval(str2expression(Cnt))
+  }
+  m <- nrow(MN$links); volB <- prod(CD); K <- volB/m
+  A <- array(0,dim=dimC); nA <- prod(dimC)
+  for(i in 1:nA){
+    s <- subscripts(TC,i); volBi <- 1
+    for(j in 1:length(s)) volBi <- volBi*CS[[j]][s[j]]
+    A[i] <- K*TC[i]/volBi
+  }
+  ord <- order(A,decreasing=TRUE)[1:nc]
+  cat("\nReport\n\n")
+  for(i in 1:nc){
+    idx <- ord[i]; s <- subscripts(TC,idx)
+    cat(i," idx=",idx," A=",A[idx]," TC=",TC[idx],"\n")
+    for(i in 1:length(s)) cat("   ",i,Nw[i],TN[[i]][s[i]],"\n")
+  }
+  cat("\n")
+}
+
+# clingsReport(MN,P,20)      
                  
