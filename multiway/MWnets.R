@@ -1,11 +1,30 @@
 # MWnets 0.0
 # by Vladimir Batagelj, November 2022
-# version: March 14, 2023
+# version: April 24, 2024
 # https://github.com/bavla/ibm3m/tree/master/multiway
 # source("https://raw.githubusercontent.com/bavla/ibm3m/master/multiway/MWnets.R")
 # ------------------------------------------------------------------
 
 inv <- function(p){q <- p; q[p] <- 1:length(p); return(q)}
+
+namesInClusters <- function(cling){
+  T <- table(cling); k <- length(names(T))
+  L <- vector("list", 4); S <- sort(cling)
+  v <- S[1]; C <- names(S)[1]; j <- 0
+  for(i in 2:length(S)){
+    if(S[i]!=v) {j <- j+1; L[[j]] <- C; C <- c(); v <- S[i]}
+    C <- c(C,names(S)[i])
+  } 
+  j <- j+1; L[[j]] <- C
+  return(L)
+}
+
+clusterNames <- function(L,sep="+"){
+  N <- c()
+  for(i in 1:length(L)) N <- c(N,paste(L[[i]],collapse=sep))
+  return(N)
+}
+
 
 reorderways <- function(MN,ord){
   Cols <- colnames(MN$links); info <- MN$info
@@ -99,21 +118,22 @@ linkcut <- function(MN,P){
 # MT <- linkcut(Sall,"w>=30")
 
 projection <- function(MN,way,w){
-  Nc <- names(MN$links); nw <- length(MN$ways); nc <- ncol(MN$links)
-  S <- c(setdiff(Nc,c(way,w)),way,w); sel <- match(S,Nc)
+  Nc <- names(MN$links); Nw <- names(MN$ways); Na <- MN$nodes[[way]]$ID
+  nw <- length(Nw); nc <- ncol(MN$links)
+  S <- c(setdiff(Nw,way),way,w); sel <- match(S,Nc)
   MT <- MN$links[sel]; Sw <- S[1:nw]
   L <- as.list(Sw); names(L) <- Sw
   for(c in Sw) L[[c]] <- MT[[c]]
   NT <- aggregate(MT[[w]], by=L, FUN=sum)
   colnames(NT) <- S
-  ex <- paste("order(",paste(Nt,collapse=","),")",sep="")
+  ex <- paste("order(",paste(Sw,collapse=","),")",sep="")
   per <- with(NT,eval(str2expression(ex)))
   MP <- NT[per,]
-  I <- c(1); nm <- nw-1; nS <- length(MN$nodes[[way]]$ID)
+  I <- c(1); nm <- nw-1; nS <- length(Na)
   for(i in 2:nrow(MP)) if(!all(MP[i-1,1:nm]==MP[i,1:nm])) I <- c(I,i)
   I <- c(I,nrow(MP)+1)
   Co <- matrix(0,nrow=nS,ncol=nS)
-  colnames(Co) <- rownames(Co) <- MN$nodes[[way]]$ID
+  colnames(Co) <- rownames(Co) <- Na
   for(i in 1:(length(I)-1)){
     i1 <- I[i]; i2 <- I[i+1]-1
     for(j in i1:i2) {
@@ -185,6 +205,49 @@ projection2 <- function(MN,way,w,z){
 # CoB <- projection2(MN,"prog","one","w")
 # CoA[1:10,1:10]
 # CoB[1:10,1:10]
+
+projector2 <- function(MR,waya,wayb,w){
+  L <- MR$links; Na <- MR$nodes[[waya]]$ID
+  T <- data.frame(wayb=L[[wayb]],waya=L[[waya]],w=L[[w]])
+  S <- aggregate(T$w,by=list(wayb=T$wayb,waya=T$waya),FUN=sum)
+  S <- S[with(S,order(wayb,waya)),]
+  colnames(S) <- c(wayb,waya,w)
+  I <- c(1); nS <- length(Na)
+  for(i in 2:nrow(S)) if(S[i-1,1]!=S[i,1]) I <- c(I,i)
+  I <- c(I,nrow(S)+1)
+  Co <- matrix(0,nrow=nS,ncol=nS)
+  colnames(Co) <- rownames(Co) <- Na
+  for(i in 1:(length(I)-1)){
+    i1 <- I[i]; i2 <- I[i+1]-1
+    for(j in i1:i2) {
+      u <- S[[waya]][j]
+      for(k in j:i2){
+        v <- S[[waya]][k]
+        Co[u,v] <- Co[u,v] + S[[w]][j] * S[[w]][k]
+      }    
+    }
+  }
+  D <- diag(Co); diag(Co) <- 0; Co <- Co + t(Co); diag(Co) <- D
+  return(Co)
+}
+
+# Co <- projector2(MR,"R","P2","w")
+
+projector <- function(MR,way,w){
+  Nw <- names(MR$ways); W <- setdiff(Nw,way)
+  Na <- MR$nodes[[way]]$ID
+  n <- length(Na); Co <- matrix(0,nrow=n,ncol=n)
+  colnames(Co) <- rownames(Co) <- Na
+  for(wayo in W) Co <- Co + projector2(MR,way,wayo,w)
+  return(Co)
+}
+
+# Dh <- as.dist(1-salton(projector(MM,"pplhlp","one")))
+# dh <- hclust(Dh,method="ward.D2")
+# plot(dh,hang=-1,cex=0.9,main="ESS media / help")
+# rh <- cutree(dh,k=4)
+# clusterNames(namesInClusters(rh))
+
 
 recodecol2bins <- function(MN,col1,col2,bins=c(0,1e-323,Inf)){
   info <- MN$info; MNr <- MN$links
