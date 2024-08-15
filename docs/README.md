@@ -5,7 +5,7 @@
 - [HiTEc 2023 - examples](https://github.com/bavla/ibm3m/blob/master/docs/ExX3D.md)
 - [HiTEc 2023 - talk](https://github.com/bavla/ibm3m/raw/master/docs/airportsHiTEc.pdf)
 - [HiTEc 2023 - course](https://github.com/bavla/ibm3m/blob/master/docs/multiwayHiTEc.pdf)
-- [V.B.: Cores in multiway networks / arXiv](https://arxiv.org/abs/2303.14313)
+- [V.B.: Cores in multiway networks / arXiv](https://arxiv.org/abs/2303.14313); [Soc. Netw. Anal. Min. 14, 122 (2024)](https://rdcu.be/dLUHZ).
 
 ## 3D layouts
 
