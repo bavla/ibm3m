@@ -1,3 +1,5 @@
+# ESSmedia
+```
 > M <- read.csv2("media2.csv")
 > MM <- DF2MWN(M,c("cntry","ppltrst","pplfair","pplhlp"),
 + network="ESSmedia-ppl",title="ESS media 2023")
@@ -30,3 +32,4 @@ List of 6
   ..$ pplfair: int [1:37611] 8 5 9 6 9 5 6 5 9 9 ...
   ..$ pplhlp : int [1:37611] 5 4 6 6 9 5 4 4 3 6 ...
  $ data  : list()
+```
