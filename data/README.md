@@ -1,6 +1,7 @@
 # Multiway network data sets
 
-
+* [Network data sets](https://github.com/bavla/Nets/tree/master/data)
+  
 | Network | Columns |  Sizes | Structure |
 | :---         |     :---       |     :---       |      :---:   |
 | [VisTest](https://raw.githubusercontent.com/bavla/ibm3m/master/data/VisTest.json)   | (SOURCE, TARGET, LINKTYPE, DATE, WEIGHT)    | (8, 8, 4, 4, 18)     | [str](https://github.com/bavla/ibm3m/blob/master/data/str/VisTest.md)     |
