@@ -1,6 +1,6 @@
 # Multiway network data sets
 
-* [Network data sets](https://github.com/bavla/Nets/tree/master/data)
+[Network data sets](https://github.com/bavla/Nets/tree/master/data/README.md)
   
 | Network | Columns |  Sizes | Structure |
 | :---         |     :---       |     :---       |      :---:   |
