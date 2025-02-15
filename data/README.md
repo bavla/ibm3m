@@ -29,4 +29,7 @@
 | students  | (prov, univ, prog, year, w)      | (107, 79, 11, 4, 37205)       | [str](https://github.com/bavla/ibm3m/blob/master/data/str/students.md)      |
 
 
+<hr>
+
+[Network data sets](https://github.com/bavla/Nets/tree/master/data/README.md)
 
