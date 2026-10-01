@@ -265,3 +265,5 @@ Selected Contributions in Data Analysis and Classification pp 151–159, Springe
 - Lazega, Emmanuel: The Collegial Phenomenon: The Social Mechanisms of Cooperation Among Peers in a Corporate Law Partnership. Oxford University Press (2001)
 - Mendeley [data](https://data.mendeley.com/research-data/?search=network)
 
+
+
