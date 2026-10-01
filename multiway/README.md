@@ -266,4 +266,3 @@ Selected Contributions in Data Analysis and Classification pp 151–159, Springe
 - Mendeley [data](https://data.mendeley.com/research-data/?search=network)
 
 
-
